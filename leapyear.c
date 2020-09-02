@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
   year = 2000;
   printf("Test Case 1: year = %d: ", year);   /*Returning 0 generally means the code succeeded and returning any other value means it failed so switch the fail and pass for consistency*/
-  if(isLeapYear(year)) {
+  if(isLeapYear(year)) {                      /*That was why there was an ! on this section of code in the beginning*/
     printf("FAILED!\n");
     numFailed = numFailed + 1;
   }
