@@ -1,12 +1,4 @@
-/**
- * Author:
- * Date:
- *
- * This programs provides basic calculator functionality
- * allowing a user to enter two operands and to compute
- * various calculated values.
- *
- */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -34,22 +26,49 @@ int main(int argc, char **argv) {
 
   switch(choice) {
     case 1:
-      printf("%f", a + b);
+      printf("%0.2f", a + b);
       break;
     case 2:
       result = a - b;
-      printf("%f", result);
+      printf("%0.2f", result);
       break;
     case 3:
-      //TODO: handle this case
+      result = a*b;
+      printf("%0.2f\n", result);
+      break;
     case 4:
-      //TODO: handle this case
+      if (b != 0) {
+        result = a/b;
+        printf("%0.2f\n", result);
+      }
+      else{
+        printf("Not divisible by 0\n");
+      }
+      break;
     case 5:
-      //TODO: handle this case
+      if (a > b) {
+        printf("%0.2f is the minimum.\n", b);
+      }
+      else if (a < b) {
+        printf("%0.2f is the minimum.\n", a);
+      }
+      else{
+        printf("Both values are equal.\n");
+      }
+      break;
     case 6:
-      //TODO: handle this case
+      result = pow(a, b);
+      printf("%0.2f\n", result);
+      break;
     case 7:
-      //TODO: handle this case
+      if (a>=0 && b>=0) {
+        result = log(b) / log(a);
+        printf("log %0.2f (%0.2f) = %0.2f\n",a, b, result );
+      }
+      else{
+        printf("Please enter positive numbers\n");
+      }
+      break;
     default:
       printf("Please input a valid operator next time");
   }
