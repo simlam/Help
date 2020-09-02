@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
   //below.  All test cases should pass.
 
   year = 2000;
-  printf("Test Case 1: year = %d: ", year);
+  printf("Test Case 1: year = %d: ", year);   /*Returning 0 generally means the code succeeded and returning any other value means it failed so switch the fail and pass for consistency*/
   if(isLeapYear(year)) {
     printf("FAILED!\n");
     numFailed = numFailed + 1;
@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
     numPassed = numPassed + 1;
   }
 
-  year = 3000;
+  year = 2016;
   printf("Test Case 6: year = %d: ", year);
   if(isLeapYear(year)) {
     printf("FAILED!\n");
@@ -98,13 +98,22 @@ int main(int argc, char **argv) {
 }
 
 int isLeapYear(int year) {
-   if (year % 400 == 0) {
+   /*if (year % 400 == 0) {
      return 0;
    }
    else if (year % 100 == 0) {
      return 0;
    }
    else if (year % 4 == 0) {
+     return 0;
+   }
+   else{
+     return 1;
+   }*/
+   if (year % 4 == 0 && year % 100 !=0) {
+     return 0;
+   }
+   else if (year % 400 ==0) {
      return 0;
    }
    else{
