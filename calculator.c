@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
       printf("%0.2f\n", result);
       break;
     case 7:
-      if (a>=0 && b>=0) {
+      if (a>0 && b>0) {
         result = log(b) / log(a);
         printf("log %0.2f (%0.2f) = %0.2f\n",a, b, result );
       }
