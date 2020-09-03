@@ -8,26 +8,40 @@
 
 int main(int argc, char **argv) {
 
-  if(argc != 2) {
-    fprintf(stderr, "Usage: %s n\n", argv[0]);
-    exit(1);
-  }
-
-  int n = atoi(argv[1]);
+  int n;
   int i;
+  int j;
+  int isPrime = 0;    //flag variable
 
+printf("Enter a number to check for primality of intergers up to that value: ");
+scanf("%d", &n);
+
+//Use nested for loop. One to print results as you iterate through n, and another to check if prime as you iterate.
+//Brain block can't figure out math for the life of me.
   for(i=2; i<=n; i++) {
-    //assume that i is prime (true) unless you find
-    // a factor...
-    int isPrime = 1;
-    //TODO: write a loop that tests whether or not
-    //      the integer i is prime
+
+    for (j = 2; j < i; j++) {
+
+      if ( j % i == 0) {
+
+        break;
+
+      }
+      else {
+
+        isPrime = 1;
+
+      }
+
+    }
 
     if(isPrime) {
       printf("%d is prime\n", i);
-    } else {
+    }
+    else {
       printf("%d is composite\n", i);
     }
+
   }
 
 

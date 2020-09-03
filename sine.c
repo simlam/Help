@@ -14,18 +14,35 @@ long factorial(int n);
 
 int main(int argc, char **argv) {
 
-  if(argc != 3) {
-    fprintf(stderr, "Usage: %s x n\n", argv[0]);
-    exit(1);
-  }
+  double x;
+  int n;
+  int i;
+  int j;
+  double result;
 
-  double x = atof(argv[1]);
-  int n = atoi(argv[2]);
+//User inputs
 
-  double result = 0.0;
+  printf("Enter x to calculate sine of: ");
+  scanf("%lf", &x);
+  printf("Enter n amount of times to perform the taylor series: ");
+  scanf("%d", &n);
 
-  //TODO: compute sin(x) using a taylor series out to n terms
+//Calculations
+//Did you learn multiple increments with one test condition?
+//Use j here as the (2i + 1) in the taylor series since i in code equates to number of iterations of the taylor series based off n in code
 
+for (i = 0, j = 1; i <= n; i++, j += 2) {
+
+//This is for the alternating + and - of the taylor series based off of n
+
+    if (i % 2 != 0) {
+      result = result - pow(x, j) / factorial(j);
+    }
+    else {
+      result = result + pow(x, j) / factorial(j);
+    }
+
+}
 
   printf("sin(%f) = %f\n", x, result);
 

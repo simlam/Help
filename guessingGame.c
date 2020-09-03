@@ -19,14 +19,34 @@ int main(int argc, char **argv) {
   srand(time(NULL));
   int number = (rand() % n) + 1;
 
-  int guess = -10;
+  int guess;
   int num_guesses = 0;
 
+//Title
+
   printf("Guess-A-Number Game!\n");
-  printf("Enter a number between 1 and %d\n", n);
 
-  //TODO: place your code here
+//If you just use while you will infinitely loop after one guess
+//Use do while so you can terminate after getting the right number
+//User input and output within do while loop because it will also infinitely loop if it is outside
+    do {
 
-  printf("Congratulations, you found it!  Number of guesses: %d\n", num_guesses);
+      printf("Enter a number between 1 and %d: ", n);
+      scanf("%d", &guess);
+
+      num_guesses ++;
+
+        if (guess < number) {
+          printf("Your guess is less than the actual value.\n");
+        }
+        else if (guess > number) {
+          printf("Your guess is higher than the actual value.\n");
+        }
+        else{
+            printf("Congratulations, you found it!  Number of guesses: %d\n", num_guesses);
+        }
+
+    } while(guess != number);
+
   return 0;
 }
