@@ -23,9 +23,9 @@ int main(int argc, char const *argv[]) {
   avgmonthlyInfl = avgannualInfl / 12;
   adjustedInter = (1 + avgmonthlyRet) / (1 + avgmonthlyInfl) - 1;
 
-  printf("Month ");
-  printf("Interest ");
-  printf("Balance \n");
+  printf(" Month ");
+  printf(" Interest ");
+  printf(" Balance \n");
 
 
   for (rows = 1; rows <= month; rows++) {
@@ -34,7 +34,7 @@ int main(int argc, char const *argv[]) {
 
       if (columns == 0) {
 
-        printf("%d ", rows);
+        printf(" %d ", rows);
 
       }
       else if (columns == 1) {
@@ -57,8 +57,8 @@ int main(int argc, char const *argv[]) {
 
   }
 
-  printf("Total Interest Earned: $ %0.2lf\n", interAccrued);
-  printf("Total Nest Egg: $ %0.2lf\n", bal);
+  printf(" Total Interest Earned: $ %0.2lf\n", interAccrued);
+  printf(" Total Nest Egg: $ %0.2lf\n", bal);
 
   return 0;
 }
