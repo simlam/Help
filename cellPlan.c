@@ -8,12 +8,15 @@ int main(int argc, char const *argv[]) {
 double gbLim, dayCur, usedCur, dailyAvg, gbLeft, gbleftAvg, usedAvg, dayLeft, exceed, remainder;
 //Base prompts
 
-  printf("Number of GB in the plan per 30 day period: ");
-  scanf("%lf", &gbLim);
-  printf("Current day in the 30 day period: ");
-  scanf("%lf", &dayCur);
-  printf("Total number of GB used so far: ");
-  scanf("%lf", &usedCur);
+/*  printf("Number of GB in the plan per 30 day period: ");
+  scanf("%lf", &gbLim);*/
+  gbLim = atof(argv[1]);
+/*  printf("Current day in the 30 day period: ");
+  scanf("%lf", &dayCur);*/
+  dayCur = atof(argv[2]);
+/*  printf("Total number of GB used so far: ");
+  scanf("%lf", &usedCur);*/
+  usedCur = atof(argv[3]);
 
 //Calculations
 
@@ -53,25 +56,25 @@ double gbLim, dayCur, usedCur, dailyAvg, gbLeft, gbleftAvg, usedAvg, dayLeft, ex
 
 //Outputs
 
-  printf("%.lf days used, %.lf days remaining\n", dayCur, dayLeft);
-  printf("Average daily use: %0.2lf GB/day\n", usedAvg);
+  printf("%2.lf days used, %2.lf days remaining\n", dayCur, dayLeft);
+  printf("Average daily use: %.2lf GB/day\n", usedAvg);
 
 //Status check for certain outputs
 
     if (usedAvg > dailyAvg) {
-      printf("You are EXCEEDING your average daily use (%0.2lf GB/day).\n", dailyAvg);
-      printf("If you continue this high usage, you'll exceed your data plan by %0.2lf GB\n", exceed);
+      printf("You are EXCEEDING your average daily use (%.2lf GB/day).\n", dailyAvg);
+      printf("If you continue this high usage, you'll exceed your data plan by %d GB\n", exceed);
     }
     else if (usedAvg < dailyAvg) {
-      printf("You are BELOW your average daily use (%0.2lf GB/day).\n", dailyAvg);
-      printf("If you continue this usage, you'll have %0.2lf GB remaining.\n", remainder);
+      printf("You are BELOW your average daily use (%.2lf GB/day).\n", dailyAvg);
+      printf("If you continue this usage, you'll have %.2lf GB remaining.\n", remainder);
     }
     else {
-      printf("You are AT your average daily use (%0.2lf GB/day).\n", dailyAvg);
+      printf("You are AT your average daily use (%.2lf GB/day).\n", dailyAvg);
     }
 
   if (dayCur<30) {
-    printf("To stay below your data plan, use no more than %0.2lf GB/day.\n", gbleftAvg);
+    printf("To stay below your data plan, use no more than %.2lf GB/day.\n", gbleftAvg);
   }
   else {
     printf("You have reached the end of your 30 day period.\n");
