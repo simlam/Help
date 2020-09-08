@@ -21,11 +21,17 @@ int main(int argc, char **argv) {
   double result;
 
 //User inputs
-
+/*
   printf("Enter x to calculate sine of: ");
   scanf("%lf", &x);
   printf("Enter n amount of times to perform the taylor series: ");
   scanf("%d", &n);
+*/
+
+x = atof(argv[1]);
+n = atoi(argv[2]);
+
+result = 0.0;
 
 //Calculations
 //Did you learn multiple increments with one test condition?
@@ -36,10 +42,10 @@ for (i = 0, j = 1; i <= n; i++, j += 2) {
 //This is for the alternating + and - of the taylor series based off of n
 
     if (i % 2 != 0) {
-      result = result - pow(x, j) / factorial(j);
+      result -= pow(x, j) / factorial(j);
     }
     else {
-      result = result + pow(x, j) / factorial(j);
+      result += pow(x, j) / factorial(j);
     }
 
 }
