@@ -15,7 +15,7 @@ and repeat for each calculation
 
 int main(int argc, char const *argv[]) {
 
-  double bal, contri, avgannualRet, avgmonthlyRet, avgannualInfl, avgmonthlyInfl, adjustedInter, yearsTil, inter, interAccrued, totalNest, month;
+  double bal, contri, avgannualRet, avgmonthlyRet, avgannualInfl, avgmonthlyInfl, adjustedInter, yearsTil, inter, interAccrued, totalNest, month, inter_rounded, bal_rounded;
   int rows;
   int columns;
 
@@ -47,6 +47,7 @@ int main(int argc, char const *argv[]) {
       else if (columns == 1) {
 
         inter = adjustedInter * bal;
+        inter_rounded = floor(inter * 100 + 0.5) / 100;
         interAccrued += inter;
         printf(" $ %0.2lf ", inter);
 
@@ -54,6 +55,7 @@ int main(int argc, char const *argv[]) {
       else {
 
         bal += inter + contri;
+        bal_rounded = floor(bal * 100 + 0.5) / 100;
         printf(" $ %0.2lf ", bal);
 
       }
