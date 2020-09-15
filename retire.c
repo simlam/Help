@@ -2,6 +2,12 @@
 /*Basic structure is there, however, am I supposed to use an array and does the math check out (p.s. its a no for now)*/
 /*The program now works but I have not factored in a rounding error, therefore values compared to the expected output on the worksheet is slightly off*/
 /*One way to round to nearest cent is to convert dollar amount to cents and do calculations as cents and convert to dollar amounts afterwards*/
+/*Another way to get around to rounding to nearest cent is to
+
+double bal_rounded = floor(bal * 100 + 0.5) / 100;
+
+and repeat for each calculation
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
