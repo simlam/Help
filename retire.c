@@ -9,6 +9,7 @@ double bal_rounded = floor(bal * 100 + 0.5) / 100;
 and repeat for each calculation
 */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
