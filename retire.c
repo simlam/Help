@@ -18,8 +18,8 @@ int main(int argc, char const *argv[]) {
 
   double bal, contri, avgannualRet, avgmonthlyRet, avgannualInfl, avgmonthlyInfl, adjustedInter, yearsTil, inter, interAccrued, month, bal_rounded, inter_rounded,adjustedInter_rounded;
   double monthlyadjustedInter;
-  double monthlyadjustedInter_rounded;
-  double monthlyadjustedInter_convert;
+  /*double monthlyadjustedInter_rounded;*/
+  /*double monthlyadjustedInter_convert;*/
   double inter_convert;
   double bal_convert;
   int rows;
@@ -38,8 +38,8 @@ int main(int argc, char const *argv[]) {
   adjustedInter_rounded = (adjustedInter * 100 + 0.5) / 100.;*/
   adjustedInter = (1 + avgannualRet)/(1 + avgannualInfl) - 1;
   monthlyadjustedInter = adjustedInter/12;
-  monthlyadjustedInter_convert = monthlyadjustedInter * 100;
-  monthlyadjustedInter_rounded = monthlyadjustedInter_convert / 100;
+  /*monthlyadjustedInter_convert = monthlyadjustedInter * 100;*/
+  /*monthlyadjustedInter_rounded = monthlyadjustedInter_convert / 100;*/
 
   printf(" Month ");
   printf(" Interest ");
@@ -57,7 +57,7 @@ int main(int argc, char const *argv[]) {
       }
       else if (columns == 1) {
 
-        inter = monthlyadjustedInter_rounded * bal;
+        inter = monthlyadjustedInter * bal;
         inter_convert = inter * 100;
         inter_rounded = round(inter_convert) / 100;
         interAccrued += inter_rounded;
