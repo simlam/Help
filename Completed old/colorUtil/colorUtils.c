@@ -19,7 +19,6 @@ int min(int x, int y, int z){
 int toGrayScaleAverage(int r, int g, int b) {
   //TODO: test this, it may be wrong!
   int avg = (r + g + b) / 3;
-  ceil(avg);
   return avg;
 }
 
@@ -29,13 +28,13 @@ int toGrayScaleLightness(int r, int g, int b){
   int min = r > g ? g : r;
   min = min > b ? b : min;
   int light = (max + min) / 2;
-  ceil(light);
   return light;
 
 }
 
 int toGrayScaleLuminosity(int r, int g, int b){
-  return (0.21 * r) + (0.72 * g) + (0.07 * b);
+  int lum = (0.21 * r) + (0.72 * g) + (0.07 * b);
+  return lum;
 }
 
 int toSepiaRed(int r, int g, int b){
