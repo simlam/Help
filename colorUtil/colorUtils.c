@@ -1,5 +1,8 @@
-/*This is the functions of the colorUtils*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
+#include "colorUtils.h"
 
 int max(int x, int y, int z) {
   int m = x > y ? x : y;
