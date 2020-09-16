@@ -18,7 +18,9 @@ int min(int x, int y, int z){
 
 int toGrayScaleAverage(int r, int g, int b) {
   //TODO: test this, it may be wrong!
-  return (r + g + b) / 3;
+  int avg = (r + g + b) / 3;
+  ceil(avg);
+  return avg;
 }
 
 int toGrayScaleLightness(int r, int g, int b){
@@ -26,8 +28,9 @@ int toGrayScaleLightness(int r, int g, int b){
   max = max > b ? max : b;
   int min = r > g ? g : r;
   min = min > b ? b : min;
-
-  return (max + min) / 2;
+  int light = (max + min) / 2;
+  ceil(light);
+  return light;
 
 }
 

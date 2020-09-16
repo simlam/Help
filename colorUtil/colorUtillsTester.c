@@ -136,6 +136,7 @@ int main(int argc, char **argv) {
   printf("TESTING: toGrayScaleAverage(%d,%d,%d): ", r, g, b);
   result = toGrayScaleAverage(r, g, b);
   //TODO: this test case will fail, why?
+  //This test fails because of a rounding problem.
   if(result != expectedResult) {
     printf("FAILED: toGrayScaleAverage returned %d, expected %d\n", result, expectedResult);
     numFailed++;
@@ -145,8 +146,8 @@ int main(int argc, char **argv) {
   }
 
   //TODO: add your test cases here
-  r = 255, g = 0, b = 255;
-  expectedResult = 255;
+  r = 50, g = 100, b = 200;
+  expectedResult = 125;
   printf("TESTING: toGrayScaleLightness(%d,%d,%d): ", r, g, b);
   result = toGrayScaleLightness(r, g, b);
   if(result != expectedResult) {
@@ -192,6 +193,7 @@ int main(int argc, char **argv) {
     printf("PASSED\n");
     numPassed++;
   }
+  //This also failed because of a rounding error.
 
   r = 100, g = 50, b = 50;
   expectedResult = 87.2;
