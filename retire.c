@@ -4,7 +4,7 @@
 /*One way to round to nearest cent is to convert dollar amount to cents and do calculations as cents and convert to dollar amounts afterwards*/
 /*Another way to get around to rounding to nearest cent is to
 
-double bal_rounded = floor(bal * 100 + 0.5) / 100;
+double bal_rounded = floor(bal * 100 + 0.5) / 100; this way works but too much and too error marked
 
 and repeat for each calculation
 */
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[]) {
         inter_rounded = round(inter_convert) / 100;
         interAccrued += inter_rounded;
         printf(" $ %0.2lf ", inter_rounded);
-
+        //convert to cents round then convert back to dollars like originally stated worked the best
       }
       else {
 
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[]) {
         bal_convert = bal * 100;
         bal_rounded = round(bal_convert) / 100;
         printf(" $ %0.2lf ", bal_rounded);
-
+        //convert to cents round then convert back to dollars 
       }
 
     }
