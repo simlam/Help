@@ -19,6 +19,9 @@ int main(int argc, char const *argv[]) {
   double bal, contri, avgannualRet, avgmonthlyRet, avgannualInfl, avgmonthlyInfl, adjustedInter, yearsTil, inter, interAccrued, month, bal_rounded, inter_rounded,adjustedInter_rounded;
   double monthlyadjustedInter;
   double monthlyadjustedInter_rounded;
+  double monthlyadjustedInter_convert;
+  double inter_convert;
+  double bal_convert;
   int rows;
   int columns;
 
@@ -35,9 +38,8 @@ int main(int argc, char const *argv[]) {
   adjustedInter_rounded = (adjustedInter * 100 + 0.5) / 100.;*/
   adjustedInter = (1 + avgannualRet)/(1 + avgannualInfl) - 1;
   monthlyadjustedInter = adjustedInter/12;
-  monthlyadjustedInter_rounded = (monthlyadjustedInter * 100 + 0.05) / 100;
-
-
+  monthlyadjustedInter_convert = monthlyadjustedInter * 100;
+  monthlyadjustedInter_rounded = monthlyadjustedInter_convert / 100;
 
   printf(" Month ");
   printf(" Interest ");
@@ -55,8 +57,9 @@ int main(int argc, char const *argv[]) {
       }
       else if (columns == 1) {
 
-        inter = monthlyadjustedInter * bal;
-        inter_rounded = (inter * 100 + 0.05) / 100;
+        inter = monthlyadjustedInter_rounded * bal;
+        inter_convert = inter * 100;
+        inter_rounded = round(inter_convert) / 100;
         interAccrued += inter_rounded;
         printf(" $ %0.2lf ", inter_rounded);
 
@@ -64,7 +67,8 @@ int main(int argc, char const *argv[]) {
       else {
 
         bal += inter_rounded + contri;
-        bal_rounded = (bal * 100 + 0.05) / 100;
+        bal_convert = bal * 100;
+        bal_rounded = round(bal_convert) / 100;
         printf(" $ %0.2lf ", bal_rounded);
 
       }
