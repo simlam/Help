@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Completed_old",
-    "\\Completed_old\\colorUtil",
-    "\\Completed_old\\orderStat"
+    "\\Completed_old"
   ],
-  "SelectedNode": "\\Completed_old\\airDistance.c",
+  "SelectedNode": "\\Completed_old\\orderStat",
   "PreviewInSolutionExplorer": false
 }
