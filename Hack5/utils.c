@@ -2,19 +2,28 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "airDistance.h"
+#include "utils.h"
 
 double degreesToRadians(double degree) {
 
-	double radians = degree * 3.14;
-	return radians / 180;
+	double radians = degree / 180;
+	double convert =  radians * 3.14;
+	return convert;
 
 }
 
 double getAirDistance(double originLatitude, double originLongitude, double destinationLatitude, double destinationLongitude) {
 
-	double sin = sin(originLatitude) * sin(destinationLatitude);
-	double cos = cos(originLatitude) * cos(destinationLatitude) * cos(destinationLatitude - originLongitude);
-	return acos(sin + cos) * 6371;
+	double sinlat = sin(originLatitude) * sin(destinationLatitude);
+	double coslat = cos(originLatitude) * cos(destinationLatitude) * cos(destinationLongitude - originLongitude);
+	double distance = acos(sinlat + coslat) * 6371;
+	return distance;
+
+}
+
+double lorentzTimeDilation(double time, double percentC) {
+
+	double denom = 1 - percentC;
+	return 1 / sqrt(denom);
 
 }

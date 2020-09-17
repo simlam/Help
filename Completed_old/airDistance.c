@@ -18,13 +18,11 @@ int main(int argc, char **argv) {
   double coslat;
   double airDis;
 
-printf("Origin: ");
-scanf("%lf, %lf", &latLoc, &lonLoc);
 
-
-
-printf("Destination: ");
-scanf("%lf, %lf", &latDes, &lonDes );
+latLoc = atof(argv[1]);
+lonLoc = atof(argv[2]);
+latDes = atof(argv[3]);
+lonDes = atof(argv[4]);
 
 //location conversion
 
