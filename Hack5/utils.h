@@ -1,4 +1,6 @@
 //This header file designates the functions we will be designing and using
+//This declares the functions we will be prototyping
+
 
 //This is the function to convert degrees to radians
 

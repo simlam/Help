@@ -1,5 +1,5 @@
 //This is the unit test for airDistance with libraries
-
+//To fix rounding errors rounded to the nearest 10000 by multiplying the result by 10000, rounding, and then dividing back by 10000
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 
 //This is the test for degrees to radians
 	testCase = 50;
-	expectedResult = 0.8722222222;
+	expectedResult = 0.8722;
 	printf("TESTING: degreesToRadians(%lf)\n", testCase);
 	result = degreesToRadians(testCase);
 	if (result == expectedResult)
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 	}
 
 	testCase = 60;
-	expectedResult = 1.04666666;
+	expectedResult = 1.0467;
 	printf("TESTING: degreesToRadians(%lf)\n", testCase);
 	result = degreesToRadians(testCase);
 	if (result == expectedResult)
@@ -74,7 +74,7 @@ int main(int argc, char** argv) {
 	}
 
 	testCase = 70;
-	expectedResult = 1.221111111;
+	expectedResult = 1.2211;
 	printf("TESTING: degreesToRadians(%lf)\n", testCase);
 	result = degreesToRadians(testCase);
 	if (result == expectedResult)
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
 	originLongitude = degreesToRadians(50);
 	destinationLatitude = degreesToRadians(90);
 	destinationLongitude = degreesToRadians(100);
-	expectedResult = 4447.354195;
+	expectedResult = 4447.4957;
 	printf("TESTING: getAirDistance(%lf, %lf, %lf, %lf)\n", originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 	result = getAirDistance(originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 	if (result == expectedResult)
@@ -130,7 +130,7 @@ int main(int argc, char** argv) {
 	originLongitude = degreesToRadians(0);
 	destinationLatitude = degreesToRadians(50);
 	destinationLongitude = degreesToRadians(50);
-	expectedResult = 7290.838462;
+	expectedResult = 7290.6853;
 	printf("TESTING: getAirDistance(%lf, %lf, %lf, %lf)\n", originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 	result = getAirDistance(originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 	if (result == expectedResult)
