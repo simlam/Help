@@ -1,1 +1,0 @@
-#This is a Visual Studio Git test.
