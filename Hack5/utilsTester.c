@@ -12,7 +12,9 @@ int main(int argc, char** argv) {
 	double originLongitude;
 	double destinationLatitude;
 	double destinationLongitude;
-	double testCase;
+	double time;
+	double percentC;
+	double degrees;
 
 	double result;
 	double expectedResult;
@@ -43,10 +45,10 @@ int main(int argc, char** argv) {
 */
 
 //This is the test for degrees to radians
-	testCase = 50;
+	degrees = 50;
 	expectedResult = 0.8722;
-	printf("TESTING: degreesToRadians(%lf)\n", testCase);
-	result = degreesToRadians(testCase);
+	printf("TESTING: degreesToRadians(%lf)\n", degrees);
+	result = degreesToRadians(degrees);
 	if (result == expectedResult)
 	{
 		printf("PASSED\n");
@@ -58,10 +60,10 @@ int main(int argc, char** argv) {
 		numFailed++;
 	}
 
-	testCase = 60;
+	degrees = 60;
 	expectedResult = 1.0467;
-	printf("TESTING: degreesToRadians(%lf)\n", testCase);
-	result = degreesToRadians(testCase);
+	printf("TESTING: degreesToRadians(%lf)\n", degrees);
+	result = degreesToRadians(degrees);
 	if (result == expectedResult)
 	{
 		printf("PASSED\n");
@@ -73,10 +75,10 @@ int main(int argc, char** argv) {
 		numFailed++;
 	}
 
-	testCase = 70;
+	degrees = 70;
 	expectedResult = 1.2211;
-	printf("TESTING: degreesToRadians(%lf)\n", testCase);
-	result = degreesToRadians(testCase);
+	printf("TESTING: degreesToRadians(%lf)\n", degrees);
+	result = degreesToRadians(degrees);
 	if (result == expectedResult)
 	{
 		printf("PASSED\n");
@@ -141,6 +143,56 @@ int main(int argc, char** argv) {
 	else
 	{
 		printf("FAILED: getAirDistance returned %lf, expected %lf\n", result, expectedResult);
+		numFailed++;
+	}
+
+	//This is a test for time dilation
+
+	time = 60;
+	percentC = 0.25;
+	expectedResult = 69.2820;
+	printf("TESTING: lorentzTimeDilation(%lf, %lf)\n", time, percentC);
+	result = lorentzTimeDilation(time, percentC);
+	if (result == expectedResult)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED: lorentzTimeDilation returned %lf, expected %lf\n", result, expectedResult);
+		numFailed++;
+	}
+
+	time = 90;
+	percentC = 0.50;
+	expectedResult = 127.2792;
+	printf("TESTING: lorentzTimeDilation(%lf, %lf)\n", time, percentC);
+	result = lorentzTimeDilation(time, percentC);
+	if (result == expectedResult)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED: lorentzTimeDilation returned %lf, expected %lf\n", result, expectedResult);
+		numFailed++;
+	}
+
+	time = 120;
+	percentC = 0.75;
+	expectedResult = 240;
+	printf("TESTING: lorentzTimeDilation(%lf, %lf)\n", time, percentC);
+	result = lorentzTimeDilation(time, percentC);
+	if (result == expectedResult)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED: lorentzTimeDilation returned %lf, expected %lf\n", result, expectedResult);
 		numFailed++;
 	}
 

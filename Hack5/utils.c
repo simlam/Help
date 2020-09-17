@@ -29,9 +29,13 @@ double getAirDistance(double originLatitude, double originLongitude, double dest
 
 //This function is one that I don't know how to go about 
 
+//Assume "t" or time is in seconds and that "v^2 / c^2" is a significant percentage of the speed of light between 0 and 1
+
 double lorentzTimeDilation(double time, double percentC) {
 
 	double denom = 1 - percentC;
-	return 1 / sqrt(denom);
+	double TimeDil = time / sqrt(denom);
+	double TimeDil_convert = TimeDil * 10000;
+	return round(TimeDil_convert) / 10000;
 
 }
