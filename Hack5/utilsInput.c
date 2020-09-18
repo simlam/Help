@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 
 	if (argc < 7 || argc > 7)
 	{
-		printf("To use utilsInput input origin latitude, origin longitude, destination latitude, destination longitude, time, percent of the speed of light\n");
+		fprintf(stderr,"To use %s input origin latitude, origin longitude, destination latitude, destination longitude, time, percent of the speed of light\n", argv[0]);
 		exit(1);
 	}
 
