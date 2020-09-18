@@ -1,19 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-
-#ifndef MODE_H
-#define MODE_H
-
-typedef enum {
-	AVERAGE,
-	LIGHTNESS,
-	LUMINOSITY
-} Mode;
-
-#endif // !MODE_H
-
-
 #include "colorUtils.h"
 
 int max(int a, int b, int c) {
