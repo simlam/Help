@@ -51,19 +51,19 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 
 	int lum = (0.21 * rd) + (0.72 * gn) + (0.07 * bl);
 
-	if (mode == 0)
+	if (mode == AVERAGE)
 	{
 		r = g = b = &avg;
 		return 0;
 	}
 
-	else if (mode == 1)
+	else if (mode == LIGHTNESS)
 	{
 		r = g = b = &light;
 		return 0;
 	}
 
-	else if (mode == 2)
+	else if (mode == LUMINOSITY)
 	{
 		r = g = b = &lum;
 		return 0;
