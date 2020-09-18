@@ -20,29 +20,6 @@ int main(int argc, char** argv) {
 	double expectedResult;
 	double numPassed = 0;
 	double numFailed = 0;
-//This part is not needed for now
-/*
-	if (originLatitude <= -181 && originLatitude >= 181)
-	{
-		printf("Bad Input");
-		exit(1);
-	}
-	if (destinationLatitude <= -181 && destinationLatitude >= 181)
-	{
-		printf("Bad Input");
-		exit(1);
-	}
-	if (originLongitude <= -91 && originLongitude >= 91)
-	{
-		printf("Bad Input");
-		exit(1);
-	}
-	if (destinationLongitude <= -91 && destinationLongitude >= 91)
-	{
-		printf("Bad Input");
-		exit(1);
-	}
-*/
 
 //This is the test for degrees to radians
 	degrees = 50;
