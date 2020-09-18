@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Completed_old",
+    "\\Completed_old\\colorUtil",
     "\\Lab6"
   ],
-  "SelectedNode": "\\Lab6\\holder.c",
+  "SelectedNode": "\\Completed_old\\colorUtil\\colorUtils.c",
   "PreviewInSolutionExplorer": false
 }
