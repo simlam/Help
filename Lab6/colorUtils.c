@@ -12,31 +12,22 @@ int min(int a, int b, int c) {
 }
 
 int toGrayScale(int* r, int* g, int* b, Mode mode) {
-	//Actually don't know if this is the way it's supposed to be 
-
-	int rd;
-	int gn;
-	int bl;
+	//Actually don't know if this is the way it's supposed to be
+	//When using a pointer variable in code always remember the * before the variable name unless declaring a reference
 	
-	r = &rd;
-	g = &gn;
-	b = &bl;
-
 	//One will be Average
 
-	int avg = (rd + gn + bl) / 3;
+	int avg = (*r + *g + *b) / 3;
 
 	//One will be Lightness
 
-	int max = rd > gn ? rd : gn;
-	max = max > bl ? max : bl;
-	int min = rd > gn ? gn : rd;
-	min = min > bl ? bl : min;
-	int light = (max + min) / 2;
+	int maxC = max(*r, *g, *b);
+	int minC = min(*r, *g, *b);
+	int light = (maxC + minC) / 2;
 
 	//One will be Luminosity
 
-	int lum = (0.21 * rd) + (0.72 * gn) + (0.07 * bl);
+	int lum = (0.21 * *r) + (0.72 * *g) + (0.07 * *b);
 
 	if (mode == AVERAGE)
 	{
@@ -64,25 +55,17 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 
 int toSepia(int* r, int* g, int* b) {
 
-	int rd;
-	int gn;
-	int bl;
-
-	r = &rd;
-	g = &gn;
-	b = &bl;
-
 	//One will be Sepia Red 
 
-	int red = (0.393 * rd) + (0.769 * gn) + (0.189 * bl);
+	int red = (0.393 * *r) + (0.769 * *g) + (0.189 * *b);
 
 	//One will be Sepia Green
 
-	int green = (0.272 * rd) + (0.534 * gn) + (0.131 * bl);
+	int green = (0.272 * *r) + (0.534 * *g) + (0.131 * *b);
 
 	//One will be Sepia Blue
 
-	int blue = (0.349 * rd) + (0.686 * gn) + (0.168 * bl);
+	int blue = (0.349 * *r) + (0.686 * *g) + (0.168 * *b);
 
 	r = &red;
 	g = &green;
