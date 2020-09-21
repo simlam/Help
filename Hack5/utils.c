@@ -31,7 +31,7 @@ double getAirDistance(double originLatitude, double originLongitude, double dest
 
 //This function is one that I don't know how to go about 
 
-//Assume "t" or time is in seconds and that "v^2 / c^2" is a significant percentage of the speed of light between 0 and 1
+//Assume "t" or time is in seconds and that "v / c" is a significant percentage of the speed of light between 0 and 1
 
 double lorentzTimeDilation(double time, double percentC) {
 
