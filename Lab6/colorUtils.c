@@ -14,6 +14,13 @@ int min(int a, int b, int c) {
 int toGrayScale(int* r, int* g, int* b, Mode mode) {
 	//Actually don't know if this is the way it's supposed to be
 	//When using a pointer variable in code always remember the * before the variable name unless declaring a reference
+
+	//Value check
+
+	if (*r, *g, *b < 0 || *r, *g, *b > 255)
+	{
+		exit(1);
+	}
 	
 	//One will be Average
 
@@ -54,6 +61,13 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 }
 
 int toSepia(int* r, int* g, int* b) {
+
+	//Value check
+
+	if (*r, *g, *b < 0 || *r, *g, *b > 255)
+	{
+		exit(1);
+	}
 
 	//One will be Sepia Red 
 
