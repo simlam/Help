@@ -63,12 +63,13 @@ int main(int argc, char** argv) {
 		exit(1);
 	}
 
+	/*
 	originLatitudeRad = degreesToRadians(originLatitude);
 	originLongitudeRad = degreesToRadians(originLongitude);
 	destinationLatitudeRad = degreesToRadians(destinationLatitude);
 	destinationLongitudeRad = degreesToRadians(destinationLongitude);
-
-	airDistance = getAirDistance(originLatitudeRad, originLongitudeRad, destinationLatitudeRad, destinationLongitudeRad);
+	*/
+	airDistance = getAirDistance(originLatitude, originLongitude, destinationLatitude, destinationLongitude);
 	timeDilation = lorentzTimeDilation(time, percentC);
 
 	printf("The air distance between (%.2lf, %.2lf) and (%.2lf, %.2lf) is %.4lf\n", originLatitude, originLongitude, destinationLatitude, destinationLongitude, airDistance);

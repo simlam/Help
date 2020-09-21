@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Completed_old",
+    "\\Hack5",
+    "\\Lab6"
   ],
-  "SelectedNode": "\\Lab6",
+  "SelectedNode": "\\Lab6\\colorUtilsTesterCmocka.c",
   "PreviewInSolutionExplorer": false
 }

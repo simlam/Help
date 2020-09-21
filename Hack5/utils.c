@@ -6,25 +6,27 @@
 
 #include "utils.h"
 
+#define M_PI 3.14159265358979323846
+
 //To make sure values can equate rounded to the nearest 10000
 
 double degreesToRadians(double degree) {
 
 	double radians = degree / 180;
-	double convert =  radians * 3.14;
-	double radians_round = convert * 10000;
-	return round(radians_round) / 10000;
+	double convert =  radians * M_PI;
+	return convert;
 
 }
 
 double getAirDistance(double originLatitude, double originLongitude, double destinationLatitude, double destinationLongitude) {
-
-	double sinlat = sin(originLatitude) * sin(destinationLatitude);
-	double coslat = cos(originLatitude) * cos(destinationLatitude) * cos(destinationLongitude - originLongitude);
+	double radorilat = degreesToRadians(originLatitude);
+	double radorilon = degreesToRadians(originLongitude);
+	double raddeslat = degreesToRadians(destinationLatitude);
+	double raddeslon = degreesToRadians(destinationLongitude);
+	double sinlat = sin(radorilat) * sin(raddeslat);
+	double coslat = cos(radorilat) * cos(raddeslat) * cos(raddeslon - radorilon);
 	double distance = acos(sinlat + coslat) * 6371;
-	double distance_round = distance * 10000;
-	return round(distance_round) / 10000;
-
+	return distance;
 }
 
 //This function is one that I don't know how to go about 
@@ -33,9 +35,7 @@ double getAirDistance(double originLatitude, double originLongitude, double dest
 
 double lorentzTimeDilation(double time, double percentC) {
 
-	double denom = 1 - percentC;
+	double denom = 1 - (percentC * percentC);
 	double TimeDil = time / sqrt(denom);
-	double TimeDil_convert = TimeDil * 10000;
-	return round(TimeDil_convert) / 10000;
-
+	return TimeDil;
 }
