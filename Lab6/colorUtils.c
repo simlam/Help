@@ -41,19 +41,19 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 
 	if (mode == AVERAGE)
 	{
-		r = g = b = &round(avg);
+		r = g = b = &avg;
 		return 0;
 	}
 
 	else if (mode == LIGHTNESS)
 	{
-		r = g = b = &round(light);
+		r = g = b = &light;
 		return 0;
 	}
 
 	else if (mode == LUMINOSITY)
 	{
-		r = g = b = &round(lum);
+		r = g = b = &lum;
 		return 0;
 	}
 
@@ -88,9 +88,9 @@ int toSepia(int* r, int* g, int* b) {
 	//Could I round while also adding in the value to the pointer i.e. x = &round(y);
 	//Something to test at a later time 
 
-	r = &round(red);
-	g = &round(green);
-	b = &round(blue);
+	r = &red;
+	g = &green;
+	b = &blue;
 
 	return 0;
 
