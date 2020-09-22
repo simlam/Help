@@ -37,22 +37,23 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 	int lum = (0.21 * *r) + (0.72 * *g) + (0.07 * *b);
 
 	//Also no idea if this syntax works but it should if I'm not crazy 
+	//Round to get rid of possible errors in the unit test?
 
 	if (mode == AVERAGE)
 	{
-		r = g = b = &avg;
+		r = g = b = &round(avg);
 		return 0;
 	}
 
 	else if (mode == LIGHTNESS)
 	{
-		r = g = b = &light;
+		r = g = b = &round(light);
 		return 0;
 	}
 
 	else if (mode == LUMINOSITY)
 	{
-		r = g = b = &lum;
+		r = g = b = &round(lum);
 		return 0;
 	}
 
