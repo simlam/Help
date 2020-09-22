@@ -36,6 +36,8 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 
 	int lum = (0.21 * *r) + (0.72 * *g) + (0.07 * *b);
 
+	//Also no idea if this syntax works but it should if I'm not crazy 
+
 	if (mode == AVERAGE)
 	{
 		r = g = b = &avg;
