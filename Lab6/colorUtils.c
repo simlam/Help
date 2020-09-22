@@ -75,11 +75,15 @@ int toSepia(int* r, int* g, int* b) {
 
 	//One will be Sepia Green
 
-	int green = (0.272 * *r) + (0.534 * *g) + (0.131 * *b);
+	int green = (0.349 * *r) + (0.686 * *g) + (0.168 * *b);
 
 	//One will be Sepia Blue
 
-	int blue = (0.349 * *r) + (0.686 * *g) + (0.168 * *b);
+	int blue = (0.272 * *r) + (0.534 * *g) + (0.131 * *b);
+
+	//I think I need to round somehow to correct errors since we are dealing with intergers
+	//Could I round while also adding in the value to the pointer i.e. x = &round(y);
+	//Something to test at a later time 
 
 	r = &red;
 	g = &green;
