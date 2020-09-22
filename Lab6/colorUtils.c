@@ -93,6 +93,7 @@ int toSepia(int* r, int* g, int* b) {
 	//I think I need to round somehow to correct errors since we are dealing with intergers
 	//Could I round while also adding in the value to the pointer i.e. x = &round(y);
 	//Something to test at a later time 
+	//It didn't work so added an intermediate variable to hold the rounding calculation
 
 	r = &red_rd;
 	g = &green_rd;
