@@ -17,51 +17,55 @@ int toGrayScale(int* r, int* g, int* b, Mode mode) {
 
 	//Value check
 
-	if (*r, *g, *b < 0 || *r, *g, *b > 255)
+	if ((*r || *g || *b <= -1) || (*r || *g || *b >= 256))
 	{
-		exit(1);
+		return 1;
 	}
-	
-	//One will be Average
 
-	int avg = (*r + *g + *b) / 3;
-	int avg_rd = round(avg);
-
-	//One will be Lightness
-
-	int maxC = max(*r, *g, *b);
-	int minC = min(*r, *g, *b);
-	int light = (maxC + minC) / 2;
-	int light_rd = round(light);
-
-	//One will be Luminosity
-
-	int lum = (0.21 * *r) + (0.72 * *g) + (0.07 * *b);
-	int lum_rd = round(lum);
+	if (r || g || b == NULL) {
+		return 2;
+	}
 
 	//Also no idea if this syntax works but it should if I'm not crazy 
 	//Round to get rid of possible errors in the unit test?
 
-	if (mode == AVERAGE)
+	if (mode == 0)
 	{
-		r = g = b = &avg_rd;
+		int avg = (*r + *g + *b) / 3;
+		int avg_rd = round(avg);
+
+		r = &avg_rd;
+		*g = *r;
+		*b = *g;
 		return 0;
 	}
 
-	else if (mode == LIGHTNESS)
+	else if (mode == 1)
 	{
-		r = g = b = &light_rd;
+		int maxC = max(*r, *g, *b);
+		int minC = min(*r, *g, *b);
+		int light = (maxC + minC) / 2;
+		int light_rd = round(light);
+
+		r = &light_rd;
+		*g = *r;
+		*b = *g;
 		return 0;
 	}
 
-	else if (mode == LUMINOSITY)
+	else if (mode == 2)
 	{
-		r = g = b = &lum_rd;
+		int lum = (0.21 * *r) + (0.72 * *g) + (0.07 * *b);
+		int lum_rd = round(lum);
+
+		r = &lum_rd;
+		*g = *r;
+		*b = *g;
 		return 0;
 	}
 
 	else {
-		exit(1);
+		return 3;
 	}
 
 }
@@ -70,35 +74,47 @@ int toSepia(int* r, int* g, int* b) {
 
 	//Value check
 
-	if (*r, *g, *b < 0 || *r, *g, *b > 255)
-	{
-		exit(1);
+	if (r || g || b == NULL) {
+		return 4;
 	}
+	
+	if (*r <= -1 || *r >= 256)
+	{
+		return 5;
+	}
+	else if (*g <= -1 || *g >= 256)
+	{
+		return 6;
+	}
+	else if (*b <= -1 || *b >= 256)
+	{
+		return 7;
+	}
+	else {
+		//One will be Sepia Red 
 
-	//One will be Sepia Red 
+		int red = (0.393 * *r) + (0.769 * *g) + (0.189 * *b);
+		int red_rd = round(red);
 
-	int red = (0.393 * *r) + (0.769 * *g) + (0.189 * *b);
-	int red_rd = round(red);
+		//One will be Sepia Green
 
-	//One will be Sepia Green
+		int green = (0.349 * *r) + (0.686 * *g) + (0.168 * *b);
+		int green_rd = round(green);
 
-	int green = (0.349 * *r) + (0.686 * *g) + (0.168 * *b);
-	int green_rd = round(green);
+		//One will be Sepia Blue
 
-	//One will be Sepia Blue
+		int blue = (0.272 * *r) + (0.534 * *g) + (0.131 * *b);
+		int blue_rd = round(blue);
 
-	int blue = (0.272 * *r) + (0.534 * *g) + (0.131 * *b);
-	int blue_rd = round(blue);
+		//I think I need to round somehow to correct errors since we are dealing with intergers
+		//Could I round while also adding in the value to the pointer i.e. x = &round(y);
+		//Something to test at a later time 
+		//It didn't work so added an intermediate variable to hold the rounding calculation
 
-	//I think I need to round somehow to correct errors since we are dealing with intergers
-	//Could I round while also adding in the value to the pointer i.e. x = &round(y);
-	//Something to test at a later time 
-	//It didn't work so added an intermediate variable to hold the rounding calculation
+		r = &red_rd;
+		g = &green_rd;
+		b = &blue_rd;
 
-	r = &red_rd;
-	g = &green_rd;
-	b = &blue_rd;
-
-	return 0;
-
+		return 0;
+	}
 }
