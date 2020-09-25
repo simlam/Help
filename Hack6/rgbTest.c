@@ -94,7 +94,49 @@ int main(int argc, char** argv) {
 
 	//This is a test for rgbtoCMYK
 
+	rr = 0;
+	gr = 0;
+	br = 0;
+	cr = 0;
+	mr = 0;
+	yr = 0;
+	kr = 0;
+	result = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
+	printf("This is a test for rgbtoCMYK(%d, %d, %d, *c, *m, *y, *k)\n", rr, gr, br);
+	expectedResult = 
 
+	if (result == expectedResult)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED did not return correct values\n");
+		numFailed++;
+	}
+
+	rr = 100;
+	gr = 100;
+	br = 100;
+	cr = 0;
+	mr = 0;
+	yr = 0;
+	kr = 0;
+	result = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
+	printf("This is a test for rgbtoCMYK(%d, &d, %d, *c, *m, *y, *k)\n", rr, gr, br);
+	expectedResult = 
+
+	if (result == expectedResult)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED did not return correct values\n");
+		numFailed++;
+	}
 
 	printf("Number Passed: %.2lf\n", numPassed);
 	printf("Number Failed: %.2lf\n", numFailed);
