@@ -103,7 +103,7 @@ int main(int argc, char** argv) {
 	kr = 0;
 	result = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
 	printf("This is a test for rgbtoCMYK(%d, %d, %d, *c, *m, *y, *k)\n", rr, gr, br);
-	expectedResult = 
+	expectedResult = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
 
 	if (result == expectedResult)
 	{
@@ -124,12 +124,12 @@ int main(int argc, char** argv) {
 	yr = 0;
 	kr = 0;
 	result = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
-	printf("This is a test for rgbtoCMYK(%d, &d, %d, *c, *m, *y, *k)\n", rr, gr, br);
-	expectedResult = 
+	printf("This is a test for rgbtoCMYK(%d, %d, %d, *c, *m, *y, *k)\n", rr, gr, br);
+	expectedResult = rgbtoCMYK(rr, gr, br, &cr, &mr, &yr, &kr);
 
 	if (result == expectedResult)
 	{
-		printf("PASSED\n");
+		printf("PASSED");
 		numPassed++;
 	}
 	else
