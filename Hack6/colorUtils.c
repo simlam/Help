@@ -38,9 +38,12 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 		return 0;
 	}
 
-	int rp = (r / 255);
-	int gp = (g / 255);
-	int bp = (b / 255);
+	int rd = (r / 255) * 100;
+	int rp = round(rd) / 100;
+	int gd = (g / 255) * 100;
+	int gp = round(gd) / 100;
+	int bd = (b / 255) * 100;
+	int bp = round(bd) / 100;
 
 	double kd = (1 - max(rp, gp, bp)) * 100;
 	double kr = round(kd) / 100;
@@ -56,7 +59,6 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 	m = &mr;
 	y = &yr;
 
-	return 0;
 }
 
 int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
@@ -94,5 +96,4 @@ int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
 	g = &gr;
 	b = &br;
 
-	return 0;
 }
