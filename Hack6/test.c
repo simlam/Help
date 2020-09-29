@@ -30,7 +30,7 @@ int main() {
 			printf("Please enter B: ");
 			scanf("%d", &b);
 
-			rgbtoCMYK(r, g, b, &c, &m, &y, &k);
+			rgbToCMYK(r, g, b, &c, &m, &y, &k);
 
 			printf("R: %d, G: %d, B: %d\n", r, g, b);
 			printf("C: %.2lf, M: %.2lf, Y: %.2lf, K: %.2lf\n", c, m, y, k);
@@ -46,7 +46,7 @@ int main() {
 			printf("Please enter K: ");
 			scanf("%lf", &k);
 
-			cmyktoRGB(c, m, y, k, &r, &g, &b);
+			cmykToRGB(c, m, y, k, &r, &g, &b);
 
 			printf("R: %d, G: %d, B: %d\n", r, g, b);
 			printf("C: %.2lf, M: %.2lf, Y: %.2lf, K: %.2lf\n", c, m, y, k);
