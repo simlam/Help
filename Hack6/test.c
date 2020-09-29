@@ -14,6 +14,8 @@ int main() {
 		m,
 		y,
 		k;
+
+
 /*
 	printf("Please enter R: ");
 	scanf("%d", &r);
@@ -27,6 +29,7 @@ int main() {
 	printf("R: %d, G: %d, B: %d\n", r, g, b);
 	printf("C: %.2lf, M: %.2lf, Y: %.2lf, K: %.2lf\n", c, m, y, k);
 */
+
 
 	printf("Please enter C: ");
 	scanf("%lf", &c);
