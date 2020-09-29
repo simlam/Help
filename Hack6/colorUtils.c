@@ -11,7 +11,7 @@ double maxC(double a, double b, double c) {
 
 }
 
-int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
+int rgbToCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 
 	if (r < 0 || g < 0 || b < 0)
 	{
@@ -58,7 +58,7 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 	
 }
 
-int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
+int cmykToRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
 
 	if (c < -1 || m < -1 || y < -1 || k < -1)
 	{
