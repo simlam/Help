@@ -18,6 +18,11 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 		return 1;
 	}
 
+	if (!c || !m || !y || !k)
+	{
+		return 1;
+	}
+
 	if (r && g && b == 0)
 	{
 		double cr = 0;
@@ -33,12 +38,9 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 		return 0;
 	}
 
-	int rd = (r / 255) * 1000;
-	int rp = round(rd) / 1000;
-	int gd = (g / 255) * 1000;
-	int gp = round(gd) / 1000;
-	int bd = (b / 255) * 1000;
-	int bp = round(bd) / 1000;
+	int rp = (r / 255);
+	int gp = (g / 255);
+	int bp = (b / 255);
 
 	double kr = 1 - max(rp, gp, bp);
 	double cr = (1 - rp - kr) / (1 - kr);
@@ -60,17 +62,18 @@ int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
 		return 1;
 	}
 
-	int rd = ((255 * (1 - c) * (1 - k) * 1000));
-	int rr = round(rd) / 1000;
-	int gd = ((255 * (1 - m) * (1 - k) * 1000));
-	int gr = round(gd) / 1000;
-	int bd = ((255 * (1 - y) * (1 - k) * 1000));
-	int br = round(bd) / 1000;
+	if (!r || !g || !b)
+	{
+		return 1;
+	}
+
+	int rr = 255 * (1 - c) * (1 - k);
+	int gr = 255 * (1 - m) * (1 - k);
+	int br = 255 * (1 - y) * (1 - k);
 
 	r = &rr;
 	g = &gr;
 	b = &br;
 
 	return 0;
-	//Might need to remove roundings so that the given unit test acts properly
 }
