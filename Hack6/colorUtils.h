@@ -7,6 +7,6 @@
 
 int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k);
 
-int max(int a, int b, int c);
+double maxC(double a, double b, double c);
 
 int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b);

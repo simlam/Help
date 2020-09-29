@@ -5,7 +5,7 @@
 #include "colorUtils.h"
 
 
-int max(int a, int b, int c) {
+double maxC(double a, double b, double c) {
 
 	return (a > b) ? (a > c ? a : c) : (b > c ? b : c);
 
@@ -13,86 +13,94 @@ int max(int a, int b, int c) {
 
 int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 
-	if ((r || g || b <= -1) || (r || g || b >= 256))
+	if (r < 0 || g < 0 || b < 0)
 	{
 		return 1;
 	}
-
+	if (r > 255 || g > 255 || b > 255)
+	{
+		return 1;
+	}
 	if (!c || !m || !y || !k)
 	{
 		return 1;
 	}
-
-	if (r && g && b == 0)
+	if (r == 0 && g == 0 && b == 0)
 	{
-		double cr = 0;
-		double mr = 0;
-		double yr = 0;
-		double kr = 1;
-
-		c = &cr;
-		m = &mr;
-		y = &yr;
-		k = &kr;
-
+		 *c = 0.0;
+		 *m = 0.0; 
+		 *y = 0.0;
+		 *k = 1.0;
+		 return 0;
+	
 	}
 
-	int rd = (r / 255) * 100;
-	int rp = round(rd) / 100;
-	int gd = (g / 255) * 100;
-	int gp = round(gd) / 100;
-	int bd = (b / 255) * 100;
-	int bp = round(bd) / 100;
+	double rp = (double)r / 255;
+	double gp = (double)g / 255;	
+	double bp = (double)b / 255;
+		
 
-	double kd = (1 - max(rp, gp, bp)) * 100;
-	double kr = round(kd) / 100;
-	double cd = ((1 - rp - kr) / (1 - kr)) * 100;
-	double cr = round(cd) / 100;
-	double md = ((1 - gp - kr) / (1 - kr)) * 100;
-	double mr = round(md) / 100;
-	double yd = ((1 - bp - kr) / (1 - kr)) * 100;
-	double yr = round(yd) / 100;
+	double kd = (1 - (maxC(rp, gp, bp))) * 100;
+	double kp = round(kd) / 100;
+	double cd = ((1 - rp - kp) / (1 - kp)) * 100;
+	double cp = round(cd) / 100;
+	double md = ((1 - gp - kp) / (1 - kp)) * 100;
+	double mp = round(md) / 100;
+	double yd = ((1 - bp - kp) / (1 - kp)) * 100;
+	double yp = round(yd) / 100;
 
-	k = &kr;
-	c = &cr;
-	m = &mr;
-	y = &yr;
+	*k = kp;
+	*c = cp;
+	*m = mp;
+	*y = yp;
 
+	return 0;
+	
 }
 
 int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
 
-	if ((c || m || y || k <= -1) || (c || m || y || k >= 2))
+	if (c < -1 || m < -1 || y < -1 || k < -1)
 	{
 		return 1;
 	}
-
+	if (c > 2 || m > 2 || y > 2 || k > 2)
+	{
+		return 1;
+	}
 	if (!r || !g || !b)
 	{
 		return 1;
 	}
 
-	int rr = round(255 * (1 - c) * (1 - k));
-	int gr = round(255 * (1 - m) * (1 - k));
-	int br = round(255 * (1 - y) * (1 - k));
 
-	if (rr > 255)
-	{
-		rr = 255;
-	}
 
-	if (gr > 255)
-	{
-		gr = 255;
-	}
+		double rd = 255 * (1 - c) * (1 - k);
+		int rr = (int)round(rd);
+		double gd = 255 * (1 - m) * (1 - k);
+		int gr = (int)round(gd);
+		double bd = 255 * (1 - y) * (1 - k);
+		int br = (int)round(bd);
 
-	if (br > 255)
-	{
-		br = 255;
-	}
+		*r = rr;
+		*g = gr;
+		*b = br;
 
-	r = &rr;
-	g = &gr;
-	b = &br;
 
+		if (rr > 255)
+		{
+			*r = 255;
+		}
+
+		if (gr > 255)
+		{
+			*g = 255;
+		}
+
+		if (br > 255)
+		{
+			*b = 255;
+		}
+		return 0;
+	
 }
