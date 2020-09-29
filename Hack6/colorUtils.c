@@ -35,7 +35,6 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 		y = &yr;
 		k = &kr;
 
-		return 0;
 	}
 
 	int rd = (r / 255) * 100;
