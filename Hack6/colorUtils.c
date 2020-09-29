@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "rgb.h"
+#include "colorUtils.h"
 
 
 int max(int a, int b, int c) {
@@ -42,10 +42,14 @@ int rgbtoCMYK(int r, int g, int b, double* c, double* m, double* y, double* k) {
 	int gp = (g / 255);
 	int bp = (b / 255);
 
-	double kr = 1 - max(rp, gp, bp);
-	double cr = (1 - rp - kr) / (1 - kr);
-	double mr = (1 - gp - kr) / (1 - kr);
-	double yr = (1 - bp - kr) / (1 - kr);
+	double kd = (1 - max(rp, gp, bp)) * 100;
+	double kr = round(kd) / 100;
+	double cd = ((1 - rp - kr) / (1 - kr)) * 100;
+	double cr = round(cd) / 100;
+	double md = ((1 - gp - kr) / (1 - kr)) * 100;
+	double mr = round(md) / 100;
+	double yd = ((1 - bp - kr) / (1 - kr)) * 100;
+	double yr = round(yd) / 100;
 
 	k = &kr;
 	c = &cr;
@@ -67,9 +71,24 @@ int cmyktoRGB(double c, double m, double y, double k, int* r, int* g, int* b) {
 		return 1;
 	}
 
-	int rr = 255 * (1 - c) * (1 - k);
-	int gr = 255 * (1 - m) * (1 - k);
-	int br = 255 * (1 - y) * (1 - k);
+	int rr = round(255 * (1 - c) * (1 - k));
+	int gr = round(255 * (1 - m) * (1 - k));
+	int br = round(255 * (1 - y) * (1 - k));
+
+	if (rr > 255)
+	{
+		rr = 255;
+	}
+
+	if (gr > 255)
+	{
+		gr = 255;
+	}
+
+	if (br > 255)
+	{
+		br = 255;
+	}
 
 	r = &rr;
 	g = &gr;
