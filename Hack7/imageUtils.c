@@ -61,6 +61,8 @@ void saveImage(const char* fileName, Pixel** image, int height, int width) {
 
 Pixel** copyImage(Pixel** image, int height, int width) {
     //TODO: implement
+    //This is the same as the reversing functiosn we wrote not too long ago
+    //All of these bitch ass functions use that core block of code in some way
 }
 
 void flipHorizontal(Pixel** image, int height, int width) {
