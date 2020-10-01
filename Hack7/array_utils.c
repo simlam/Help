@@ -69,6 +69,22 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 	int j;
 	int newArr[newSize];
 
+	if (newSize < oldSize)
+	{
+		printf("[ ");
+		for (i = 0; i < newSize; i++)
+		{
+
+			newArr[i] = arr[i];
+			printf("%d ", newArr[i]);
+
+		}
+
+		printf("]");
+		return 0;
+
+	}
+
 	printf("[ ");
 
 	for (i = 0; i < oldSize; i++) {

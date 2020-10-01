@@ -7,14 +7,23 @@
 int main() {
 
 	int func;
-	int size = 5;
+	int size;
 	int x;
 	int i;
 	int j;
 	int oldSize;
 	int newSize;
 
-	int arr[] = { 1, 2, 3, 4, 5 };
+	printf("Enter size of array: ");
+	scanf("%d", &size);
+
+	int arr[size];
+
+	for (i = 0; i < size; i++)
+	{
+		printf("enter %dth element of array: ", i);
+		scanf("%d", &arr[i]);
+	}
 
 	printf("Enter operation: \n");
 	printf("1: contains\n2: contains within bound\n3: copy and pad\n4: reverse array\n5: copy and reverse\n");
