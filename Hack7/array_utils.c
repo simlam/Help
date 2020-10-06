@@ -125,7 +125,6 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 	}
 
 	/*printf("]");*/
-	return newArr;
 	free(newArr);
 	
 	return 0;
@@ -156,7 +155,6 @@ void reverse(int* arr, int size) {
 		
 		newArr[i] = arr[j];
 		/*printf("%d ", newArr[i]);*/
-		return newArr;
 
 	}
 
@@ -189,7 +187,6 @@ int* reverseCopy(const int* arr, int size) {
 
 		/*printf("%d ", arr[j]);*/
 		copyArr[j] = arr[j];
-		return copyArr;
 
 	}
 	
@@ -203,7 +200,6 @@ int* reverseCopy(const int* arr, int size) {
 
 		newArr[i] = arr[k];
 		/*printf("%d ", newArr[i]);*/
-		return newArr;
 
 	}
 
