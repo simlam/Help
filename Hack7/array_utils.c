@@ -92,38 +92,40 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 
 	if (newSize < oldSize)
 	{
-		printf("[ ");
+		/*printf("[ ");*/
 		for (i = 0; i < newSize; i++)
 		{
 
 			newArr[i] = arr[i];
-			printf("%d ", newArr[i]);
+			/*printf("%d ", newArr[i]);*/
 
 		}
 
-		printf("]");
-		return 0;
+		/*printf("]");
+		return 0;*/
 
 	}
 
-	printf("[ ");
+	/*printf("[ ");*/
 
 	for (i = 0; i < oldSize; i++) {
 
 		newArr[i] = arr[i];
-		printf("%d ", newArr[i]);
+		/*printf("%d ", newArr[i]);*/
 
 	}
 
 	for (j = oldSize; j < newSize; j++)
 	{
 		newArr[j] = 0;
-		printf("%d ", newArr[j]);
+		/*printf("%d ", newArr[j]);*/
 	}
 
-	printf("]");
+	/*printf("]");
 	
-	return 0;
+	return 0;*/
+
+	return newArr;
 
 }
 
@@ -143,17 +145,19 @@ void reverse(int* arr, int size) {
 	int j;
 	int newArr[size];
 
-	printf("[ ");
+	/*printf("[ ");*/
 
 	for (i = 0, j = size - 1; i < size; i++, j--)
 	{
 		
 		newArr[i] = arr[j];
-		printf("%d ", newArr[i]);
+		/*printf("%d ", newArr[i]);*/
 
 	}
 
-	printf("]");
+	/*printf("]");*/
+
+	return newArr;
 
 }
 
@@ -167,31 +171,33 @@ int* reverseCopy(const int* arr, int size) {
 	int j;
 	int k;
 	int newArr[size];
+	int copyArr[size];
 
-	printf("Copy\n");
-	printf("[ ");
+	/*printf("Copy\n");
+	printf("[ ");*/
 
 	for (j = 0; j < size; j++)
 	{
 
-		printf("%d ", arr[j]);
+		/*printf("%d ", arr[j]);*/
+		copyArr[j] = arr[j];
 
 	}
-
-	printf("]\n");
+	
+	/*printf("]\n");
 
 	printf("Reverse copy\n");
-	printf("[ ");
+	printf("[ ");*/
 
 	for (i = 0, k = size - 1; i < size; i++, k--)
 	{
 
 		newArr[i] = arr[k];
-		printf("%d ", newArr[i]);
+		/*printf("%d ", newArr[i]);*/
 
 	}
 
-	printf("]");
+	/*printf("]");*/
 
 	return 0;
 
