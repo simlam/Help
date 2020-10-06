@@ -66,11 +66,11 @@ int containsWithin(const int* arr, int size, int x, int i, int j) {
 
 	if (flag == 1)
 	{
-		return 0;
+		return 1;
 	}
 	else
 	{
-		return 1;
+		return 0;
 	}
 
 }
