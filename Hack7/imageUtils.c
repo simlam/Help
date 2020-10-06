@@ -126,7 +126,7 @@ void flipHorizontal(Pixel** image, int height, int width) {
 
     }
 
-    return;
+    return horiImage;
 }
 
 void flipVertical(Pixel** image, int height, int width) {
@@ -166,7 +166,7 @@ void flipVertical(Pixel** image, int height, int width) {
 
     }
 
-    return;
+    return vertImage;
 }
 
 Pixel** rotateClockwise(Pixel** image, int height, int width) {
@@ -191,6 +191,6 @@ Pixel** rotateClockwise(Pixel** image, int height, int width) {
 
     } 
 
-    return;
+    return rotImage;
 
 }
