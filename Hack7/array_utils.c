@@ -54,7 +54,7 @@ int containsWithin(const int* arr, int size, int x, int i, int j) {
 		j = size;
 	}
 
-	for (k = i - 1; k <= j - 1 ; k++)
+	for (k = i; k <= j ; k++)
 	{
 
 		if (arr[k] == x)
