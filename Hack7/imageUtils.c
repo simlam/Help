@@ -91,16 +91,105 @@ Pixel** copyImage(Pixel** image, int height, int width) {
 void flipHorizontal(Pixel** image, int height, int width) {
     //TODO: implement
 
+    //Flipping an image horizontally means keeping the center the same while swapping out the edges
+    //To do this we divide it by half and make two nested for loops that will swap the edge pixels away from the middle
 
+    Pixel** horiImage = (Pixel**)malloc(sizeof(Pixel*) * height);
+    horiImage[0] = (Pixel*)malloc(sizeof(Pixel) * (height * width));
+
+    int halfheight = height / 2;
+
+    int i,
+        j;
+
+    for ( i = 0; i < halfheight; i++)
+    {
+
+        for ( j = 0; j < width; j++)
+        {
+
+            horiImage[i][height - 1 - j] = image[i][j];
+
+        }
+
+    }
+
+    for ( i = halfheight; i < height; i++)
+    {
+
+        for ( j = 0; j < width; j++)
+        {
+
+            horiImage[i][height - 1 - j] = image[i][j];
+
+        }
+
+    }
 
     return;
 }
 
 void flipVertical(Pixel** image, int height, int width) {
     //TODO: implement
+
+    //Same concept as flipping an image horizontally now we do it with the width and not the height
+
+    Pixel** vertImage = (Pixel**)malloc(sizeof(Pixel*) * height);
+    vertImage[0] = (Pixel*)malloc(sizeof(Pixel) * (height * width));
+
+    int halfwidth = width / 2;
+
+    int i,
+        j;
+
+    for ( i = 0; i < halfwidth; i++)
+    {
+
+        for ( j = 0; j < height; j++)
+        {
+
+            vertImage[width - 1 - i][j] = image[i][j];
+
+        }
+
+    }
+
+    for (i = halfwidth; i < width; i++)
+    {
+
+        for (j = 0; j < height; j++)
+        {
+
+            vertImage[width - 1 - i][j] = image[i][j];
+
+        }
+
+    }
+
     return;
 }
 
 Pixel** rotateClockwise(Pixel** image, int height, int width) {
     //TODO: implement
+
+    //Think rubiks cube where you have the edges move but the center is always the same
+
+    Pixel** rotImage = (Pixel**)malloc(sizeof(Pixel*) * height);
+    rotImage[0] = (Pixel*)malloc(sizeof(Pixel) * (height * width));
+
+    int i,
+        j;
+
+    for (i = 0; i < width; i++) 
+    {
+        for (j = 0; j < height; j++)
+        {
+            rotImage[j][width - 1 - i] = image[i][j];
+
+        }
+
+    } 
+
+    return;
+
 }
