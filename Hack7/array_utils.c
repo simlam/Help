@@ -93,7 +93,7 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 	int j;
 	int n = oldSize;
 	int m = newSize;
-	int* newArr = (int*)malloc(sizeof(int) * m);
+	int* newArr = malloc(sizeof(int) * m);
 
 	if (m < n)
 	{
@@ -149,7 +149,7 @@ void reverse(int* arr, int size) {
 	int i;
 	int j;
 	int m = size;
-	int* newArr = (int*)malloc(sizeof(int) * m);
+	int* newArr = malloc(sizeof(int) * m);
 
 	/*printf("[ ");*/
 
@@ -179,8 +179,8 @@ int* reverseCopy(const int* arr, int size) {
 	int j;
 	int k;
 	int m = size;
-	int* newArr = (int*)malloc(sizeof(int) * m);
-	int* copyArr = (int*)malloc(sizeof(int) * m);
+	int* newArr = malloc(sizeof(int) * m);
+	int* copyArr = malloc(sizeof(int) * m);
 
 	/*printf("Copy\n");
 	printf("[ ");*/
