@@ -66,12 +66,14 @@ int containsWithin(const int* arr, int size, int x, int i, int j) {
 
 	if (flag == 1)
 	{
-		return 1;
+		return 0;
 	}
 	else
 	{
-		return 0;
+		return 1;
 	}
+
+	return 0;
 
 }
 
@@ -123,6 +125,8 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 	}
 
 	/*printf("]");*/
+	return newArr;
+	free(newArr);
 	
 	return 0;
 
@@ -152,10 +156,13 @@ void reverse(int* arr, int size) {
 		
 		newArr[i] = arr[j];
 		/*printf("%d ", newArr[i]);*/
+		return newArr;
 
 	}
 
 	/*printf("]");*/
+
+	free(newArr);
 
 	return;
 
@@ -182,6 +189,7 @@ int* reverseCopy(const int* arr, int size) {
 
 		/*printf("%d ", arr[j]);*/
 		copyArr[j] = arr[j];
+		return copyArr;
 
 	}
 	
@@ -195,10 +203,13 @@ int* reverseCopy(const int* arr, int size) {
 
 		newArr[i] = arr[k];
 		/*printf("%d ", newArr[i]);*/
+		return newArr;
 
 	}
 
 	/*printf("]");*/
+	free(copyArr);
+	free(newArr);
 
 	return 0;
 

@@ -126,7 +126,7 @@ void flipHorizontal(Pixel** image, int height, int width) {
 
     }
 
-    return 0;
+    return;
 }
 
 void flipVertical(Pixel** image, int height, int width) {
