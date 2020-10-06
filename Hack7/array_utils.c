@@ -28,11 +28,11 @@ int contains(const int* arr, int size, int x) {
 
 	if (flag == 1)
 	{
-		printf("TRUE");
+		return 0;
 	}
 	else
 	{
-		printf("FALSE");
+		return 1;
 	}
 
 	return 0;
