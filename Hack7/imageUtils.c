@@ -63,10 +63,36 @@ Pixel** copyImage(Pixel** image, int height, int width) {
     //TODO: implement
     //This is the same as the reversing functiosn we wrote not too long ago
     //All of these bitch ass functions use that core block of code in some way
+
+    
+    Pixel** copyImage = (Pixel**)malloc(sizeof(Pixel*) * height);
+    copyImage[0] = (Pixel*)malloc(sizeof(Pixel) * (height * width));
+
+    int i;
+    for (i = 1; i < height; i++)
+    {
+        copyImage[i] = (*copyImage + (width * i));
+    }
+
+    int j,
+        k;
+    for (j = 0; j < height; j++)
+    {
+        for (k = 0; k < width; k++) 
+        {
+            copyImage[j][k] = image[j][k];
+        }
+    }
+
+    return copyImage;
+
 }
 
 void flipHorizontal(Pixel** image, int height, int width) {
     //TODO: implement
+
+
+
     return;
 }
 
