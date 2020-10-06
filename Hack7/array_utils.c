@@ -35,6 +35,8 @@ int contains(const int* arr, int size, int x) {
 		return 1;
 	}
 
+	return 0;
+
 }
 
 //We use the same flag system but set bounds with i and j 
@@ -70,6 +72,8 @@ int containsWithin(const int* arr, int size, int x, int i, int j) {
 	{
 		return 0;
 	}
+
+	return 0;
 
 }
 
