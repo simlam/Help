@@ -66,14 +66,12 @@ int containsWithin(const int* arr, int size, int x, int i, int j) {
 
 	if (flag == 1)
 	{
-		printf("TRUE");
+		return 0;
 	}
 	else
 	{
-		printf("FALSE");
+		return 1;
 	}
-
-	return 0;
 
 }
 
