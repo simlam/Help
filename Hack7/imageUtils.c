@@ -182,6 +182,7 @@ Pixel** rotateClockwise(Pixel** image, int height, int width) {
 
     for (i = 0; i < width; i++) 
     {
+
         for (j = 0; j < height; j++)
         {
             rotImage[j][width - 1 - i] = image[i][j];
