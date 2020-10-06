@@ -47,11 +47,12 @@ int contains(const int* arr, int size, int x) {
 int containsWithin(const int* arr, int size, int x, int i, int j) {
 
 	int k;
+	int m = size;
 	int flag = 0; 
 
-	if (j > size)
+	if (j > m)
 	{
-		j = size;
+		j = m;
 	}
 
 	for (k = i; k <= j ; k++)
@@ -90,13 +91,14 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 
 	int i;
 	int j;
+	int n = oldSize;
 	int m = newSize;
 	int* newArr = (int*)malloc(sizeof(int) * m);
 
-	if (newSize < oldSize)
+	if (m < n)
 	{
 		/*printf("[ ");*/
-		for (i = 0; i < newSize; i++)
+		for (i = 0; i < m; i++)
 		{
 
 			newArr[i] = arr[i];
@@ -111,20 +113,21 @@ int* paddedCopy(const int* arr, int oldSize, int newSize) {
 
 	/*printf("[ ");*/
 
-	for (i = 0; i < oldSize; i++) {
+	for (i = 0; i < n; i++) {
 
 		newArr[i] = arr[i];
 		/*printf("%d ", newArr[i]);*/
 
 	}
 
-	for (j = oldSize; j < newSize; j++)
+	for (j = n; j < m; j++)
 	{
 		newArr[j] = 0;
 		/*printf("%d ", newArr[j]);*/
 	}
 
 	/*printf("]");*/
+
 	free(newArr);
 	
 	return 0;
