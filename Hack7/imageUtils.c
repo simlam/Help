@@ -84,6 +84,8 @@ Pixel** copyImage(Pixel** image, int height, int width) {
         }
     }
 
+    free(copyImage);
+
     return copyImage;
 
 }
@@ -126,6 +128,8 @@ void flipHorizontal(Pixel** image, int height, int width) {
 
     }
 
+    free(horiImage);
+
     return;
 }
 
@@ -166,6 +170,8 @@ void flipVertical(Pixel** image, int height, int width) {
 
     }
 
+    free(vertImage);
+
     return;
 }
 
@@ -190,6 +196,8 @@ Pixel** rotateClockwise(Pixel** image, int height, int width) {
         }
 
     } 
+
+    free(rotImage);
 
     return 0;
 
