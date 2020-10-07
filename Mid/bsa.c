@@ -32,7 +32,6 @@ void main(int argc, char** argv) {
 	}
 	else
 	{
-
 		//Split the calculation of ln to seperate variable to not clutter code
 
 		weightExp = (0.6157 - (0.00816474 * log(weight)));
@@ -52,7 +51,5 @@ void main(int argc, char** argv) {
 		printf("Boyd		%lf\n", boyd);
 		printf("Average		%lf\n", avg);
 	}
-
 	return;
-
 }

@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 void main(int argc, char** argv) {
-	//divisible by 3 print Fizz
-	//divisible by 5 print Buzz
-	//divisible by 3 and 5 print Fizzbuzz
+	
+	//Divisible by 3 print Fizz
+	//Divisible by 5 print Buzz
+	//Divisible by 3 and 5 print Fizzbuzz
 
 	int i;
 
@@ -26,7 +27,5 @@ void main(int argc, char** argv) {
 			printf("%d\n", i);
 		}
 	}
-
 	return;
-
 }

@@ -20,9 +20,7 @@ int dotProduct(const int* a, const int* b, int n, int* result) {
 	{
 		prod += a[i] * b[i];
 	}
-
 	*result = prod;
-
 	return 0;
 }
 
@@ -45,11 +43,8 @@ int biasedDotProduct(const int* a, const int* b, int n, int* result) {
 			prod += a[i] * b[i];
 		}
 	}
-
 	*result = prod;
-
 	return 0;
-
 }
 
 int* filterPositive(const int* arr, int n, int* newSize) {
@@ -86,9 +81,6 @@ int* filterPositive(const int* arr, int n, int* newSize) {
 			j++;
 		}
 	}
-
 	*newSize = new;
-
 	return newArr;
-
 }
