@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
 
 	double height,
 		weight,
@@ -51,5 +51,5 @@ void main(int argc, char** argv) {
 		printf("Boyd		%lf\n", boyd);
 		printf("Average		%lf\n", avg);
 	}
-	return;
+	return 0;
 }

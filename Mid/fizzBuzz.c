@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
 	
 	//Divisible by 3 print Fizz
 	//Divisible by 5 print Buzz
@@ -27,5 +27,5 @@ void main(int argc, char** argv) {
 			printf("%d\n", i);
 		}
 	}
-	return;
+	return 0;
 }

@@ -5,7 +5,7 @@
 #include "array_utils.h"
 /* This is a convenience function that prints an integer * array to the standard output.*/
 void printIntArray(const int *arr, int n);
-int main(int argc, char argv) { 
+int main(int argc, char **argv) { 
 	int n = 5, m;  
 	int a[] = {-2, 5, 3, 2, 1};  
 	int b[] = {9, 4, 8, 0, -2};  
