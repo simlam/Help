@@ -17,9 +17,6 @@ int dotProduct(const int* a, const int* b, int n, int* result) {
 		int i;
 		int prod = 0;
 
-		int* ap = (int*)malloc(sizeof(int) * n);
-		int* bp = (int*)malloc(sizeof(int) * n);
-
 		for (i = 0; i < n; i++)
 		{
 			ap[i] = a[i];
@@ -45,13 +42,8 @@ int biasedDotProduct(const int* a, const int* b, int n, int* result) {
 		int prod = 0;
 		int biasedprod = 0;
 
-		int* ap = (int*)malloc(sizeof(int) * n);
-		int* bp = (int*)malloc(sizeof(int) * n);
-
 		for (i = 0; i < n; i++)
 		{
-			ap[i] = a[i];
-			bp[i] = b[i];
 			prod = ap[i] * bp[i];
 			if (prod >= 0)
 			{

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Hack7",
     "\\Mid"
   ],
-  "SelectedNode": "\\Mid\\fizzBuzz.c",
+  "SelectedNode": "\\Mid\\array_utils.c",
   "PreviewInSolutionExplorer": false
 }
