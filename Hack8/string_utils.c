@@ -6,26 +6,46 @@
 
 void replaceChar(char* s, char oldChar, char newChar) {
 
-	char* position = strchr(s, oldChar);
-	while (position) {
-
-		*position = newChar;
-		position = strchr(position, oldChar);
-
+	if (s == NULL || oldChar == '\0' || newChar == '\0')
+	{
+		return;
 	}
 
-	return;
+	int i;
+	int n = strlen(s);
+
+	for (i = 0; i < n; i++)
+	{
+		if (s[i] == oldChar)
+		{
+			s[i] = newChar;
+		}
+
+	}
 
 }
 
 char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 
-	char* copy = strchr(s, oldChar);
-	while (copy) {
+	if (s == NULL || oldChar == '\0' || newChar == '\0')
+	{
+		return NULL;
+	}
 
-		*copy = newChar;
-		copy = strchr(copy, oldChar);
+	int i;
+	int j;
+	int n = strlen(s);
+	char *copy = (char*) malloc(sizeof(int) * n);
 
+	for (i = 0, j = 0; i < n; i++, j++)
+	{
+		if (s[i] == oldChar)
+		{
+			copy[j] = newChar;
+		}
+
+		copy[j] = s[i];
+		
 	}
 
 	return copy;
@@ -34,32 +54,49 @@ char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 
 void removeChar(char* s, char c) {
 
-	char* scan, * replace;
-	for (scan = replace = s; *scan != '\0'; scan++)
+	if (s == NULL || c == '\0')
 	{
-		*replace = *scan;
-		if (*replace != c)
-		{
-			replace++;
-		}
+		return;
 	}
 
-	*replace = '\0';
-	return;
+	int i;
+	int j;
+	int n = strlen(s);
+
+	for (i = j = 0; i < n; i++)
+	{
+		if (s[i] != c) 
+		{
+			s[j] = s[i];
+			j++;
+		}
+
+		s[j] = '\0';
+	}
+
 }
 
 char* removeCharCopy(const char* s, char c) {
 
-	char* copy;
-	for (s; *s!= '\0' ; s++)
+	if (s == NULL || c == '\0') 
 	{
+		return NULL;
+	}
 
-		if (*s != c)
+	int i;
+	int j;
+	int n = strlen(s);
+	char* copy;
+
+	for (i = j = 0; i < n; i++)
+	{
+		if (s[i] != c)
 		{
-			*copy = *s;
-			s++;
+			copy[j] = s[i];
+			j++;
 		}
 
+		copy[j] = '\0';
 	}
 
 	return copy;
