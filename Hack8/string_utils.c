@@ -37,17 +37,15 @@ char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 	int n = strlen(s);
 	char *copy = (char*) malloc(sizeof(int) * n);
 
-	for (i = 0, j = 0; i < n; i++)
+	for (i = 0, j = 0; i < n; i++, j++)
 	{
 		if (s[i] == oldChar)
 		{
 			copy[j] = newChar;
-			j++;
 		}
 		else
 		{
 			copy[j] = s[i];
-			j++;
 		}
 	}
 
@@ -108,6 +106,9 @@ char* removeCharCopy(const char* s, char c) {
 
 char** lengthSplit(const char* s, int n) {
 
-	
+	int i;
+	int x = strlen(s);
+	char* copy = (char*)malloc(sizeof(int) * x);
+
 
 }

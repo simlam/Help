@@ -16,6 +16,7 @@ int main(int argc, char** argv) {
 	double numPassed = 0;
 	double numFailed = 0;
 
+	/*The fact that the pointer functions work then the void version of the function will be successful as well*/
 	/*How would I go about testing a void type function*/
 	/*This tests the replace character copy function*/
 	char expectedResult[] = "azcdefg";
@@ -41,8 +42,8 @@ int main(int argc, char** argv) {
 	oldChar = 'g';
 	newChar = 'y';
 	printf("TESTING: replaceCharCopy(%s, %c, %c);\n", s, oldChar, newChar);
-	char *new2 = replaceCharCopy(s, oldChar, newChar);
-	result = strcmp(new2, expectedResult2);
+	new = replaceCharCopy(s, oldChar, newChar);
+	result = strcmp(new, expectedResult2);
 	if (result == 0)
 	{
 		printf("PASSED\n");
@@ -52,7 +53,7 @@ int main(int argc, char** argv) {
 	{
 		printf("FAILED\n");
 		printf("expected result:[%s]\n", expectedResult2);
-		printf("replaceCharCopy result:[%s]\n", new2);
+		printf("replaceCharCopy result:[%s]\n", new);
 		numFailed++;
 	}
 
@@ -60,8 +61,8 @@ int main(int argc, char** argv) {
 	oldChar = 'e';
 	newChar = 'a';
 	printf("TESTING: replaceCharCopy(%s, %c, %c);\n", s, oldChar, newChar);
-	char *new3 = replaceCharCopy(s, oldChar, newChar);
-	result = strcmp(new3, expectedResult3);
+	new = replaceCharCopy(s, oldChar, newChar);
+	result = strcmp(new, expectedResult3);
 	if (result == 0)
 	{
 		printf("PASSED\n");
@@ -71,7 +72,7 @@ int main(int argc, char** argv) {
 	{
 		printf("FAILED\n");
 		printf("expected result:[%s]\n", expectedResult3);
-		printf("replaceCharCopy result:[%s]\n", new3);
+		printf("replaceCharCopy result:[%s]\n", new);
 		numFailed++;
 	}
 
@@ -81,8 +82,8 @@ int main(int argc, char** argv) {
 	char expectedResult4[] = "acdefg";
 	c = 'b';
 	printf("TESTING: removeCharCopy(%s, %c);\n", s, c);
-	char *copy = removeCharCopy(s, c);
-	result = strcmp(copy, expectedResult4);
+	new = removeCharCopy(s, c);
+	result = strcmp(new, expectedResult4);
 	if (result == 0)
 	{
 		printf("PASSED\n");
@@ -92,15 +93,15 @@ int main(int argc, char** argv) {
 	{
 		printf("FAILED\n");
 		printf("expected result:[%s]\n", expectedResult4);
-		printf("removeCharCopy result:[%s]\n", copy);
+		printf("removeCharCopy result:[%s]\n", new);
 		numFailed++;
 	}
 
 	char expectedResult5[] = "bcdefg";
 	c = 'a';
 	printf("TESTING: removeCharCopy(%s, %c);\n", s, c);
-	char *copy2 = removeCharCopy(s, c);
-	result = strcmp(copy2, expectedResult5);
+	new = removeCharCopy(s, c);
+	result = strcmp(new, expectedResult5);
 	if (result == 0)
 	{
 		printf("PASSED\n");
@@ -110,15 +111,15 @@ int main(int argc, char** argv) {
 	{
 		printf("FAILED\n");
 		printf("expected result:[%s]\n", expectedResult5);
-		printf("removeCharCopy result:[%s]\n", copy2);
+		printf("removeCharCopy result:[%s]\n", new);
 		numFailed++;
 	}
 
 	char expectedResult6[] = "abcdef";
 	c = 'g';
 	printf("TESTING: removeCharCopy(%s, %c);\n", s, c);
-	char *copy3 = removeCharCopy(s, c);
-	result = strcmp(copy3, expectedResult6);
+	new = removeCharCopy(s, c);
+	result = strcmp(new, expectedResult6);
 	if (result == 0)
 	{
 		printf("PASSED\n");
@@ -128,9 +129,15 @@ int main(int argc, char** argv) {
 	{
 		printf("FAILED\n");
 		printf("expected result:[%s]\n", expectedResult6);
-		printf("removeCharCopy result:[%s]\n", copy3);
+		printf("removeCharCopy result:[%s]\n", new);
 		numFailed++;
 	}
+
+	/*This is a test of lengthSplit*/
+
+	n = 4;
+	char **new1 = lengthSplit(s, n);
+	printf("[%s]\n", new1);
 
 
 	printf("Number Of Test Cases Passed: %.2lf \n", numPassed);
