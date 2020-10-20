@@ -106,6 +106,11 @@ char* removeCharCopy(const char* s, char c) {
 
 char** lengthSplit(const char* s, int n) {
 
+	if (s == NULL || n < 0)
+	{
+		return NULL;
+	}
+
 	int i;
 	int j;
 
