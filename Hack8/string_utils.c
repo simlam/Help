@@ -6,7 +6,7 @@
 
 void replaceChar(char* s, char oldChar, char newChar) {
 
-	if (s == NULL || oldChar == '\0' || newChar == '\0')
+	if (s == NULL || oldChar == NULL || newChar == NULL)
 	{
 		return;
 	}
@@ -27,7 +27,7 @@ void replaceChar(char* s, char oldChar, char newChar) {
 
 char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 
-	if (s == NULL || oldChar == '\0' || newChar == '\0')
+	if (s == NULL || oldChar == NULL || newChar == NULL)
 	{
 		return NULL;
 	}
@@ -55,7 +55,7 @@ char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 
 void removeChar(char* s, char c) {
 
-	if (s == NULL || c == '\0')
+	if (s == NULL || c == NULL)
 	{
 		return;
 	}
@@ -79,7 +79,7 @@ void removeChar(char* s, char c) {
 
 char* removeCharCopy(const char* s, char c) {
 
-	if (s == NULL || c == '\0') 
+	if (s == NULL || c == NULL) 
 	{
 		return NULL;
 	}
@@ -87,7 +87,7 @@ char* removeCharCopy(const char* s, char c) {
 	int i;
 	int j;
 	int n = strlen(s);
-	char* copy;
+	char* copy = (char*)malloc(sizeof(int) * n);
 
 	for (i = j = 0; i < n; i++)
 	{
