@@ -141,19 +141,32 @@ int main(int argc, char** argv) {
 	char** new2;
 	int x = strlen(s);
 	int num;
-
 	num = (x / n) + 1;
-
+	int flag = 0;
+	char expectedResult7[][] = { {"a", "b", "c"}, {"d", "e", "f"}, {"g", " ", " "} };
 	new2 = lengthSplit(s, n);
 
-	while (i < num)
+	for (i = 0; i < num; i++)
 	{
-		for (j = 0; j < 3; j++)
+		for (j = 0; j < num; j++) 
 		{
-			printf("%c", new2[i][j]);
+			if (expectedResult7[i][j] != new2[i][j])
+			{
+				flag = 1;
+			}
 		}
-		printf("\n");
-		i++;
+	}
+	if (flag == 0)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED\n");
+		printf("expected result:[%s]\n", expectedResult7);
+		printf("lengthSplit result:[%s]\n", new2);
+		numFailed++;
 	}
 
 
