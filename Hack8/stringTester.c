@@ -135,9 +135,26 @@ int main(int argc, char** argv) {
 
 	/*This is a test of lengthSplit*/
 
-	n = 4;
-	char **new1 = lengthSplit(s, n);
-	printf("[%s]\n", new1);
+	int i = 0;
+	int j = 0;
+	n = 3;
+	char** new2;
+	int x = strlen(s);
+	int num;
+
+	num = (x / n) + 1;
+
+	new2 = lengthSplit(s, n);
+
+	while (i < num)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%c", new2[i][j]);
+		}
+		printf("\n");
+		i++;
+	}
 
 
 	printf("Number Of Test Cases Passed: %.2lf \n", numPassed);

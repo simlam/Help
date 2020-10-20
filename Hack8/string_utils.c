@@ -107,8 +107,56 @@ char* removeCharCopy(const char* s, char c) {
 char** lengthSplit(const char* s, int n) {
 
 	int i;
-	int x = strlen(s);
-	char* copy = (char*)malloc(sizeof(int) * x);
+	int j;
 
+	int x = strlen(s);
+
+	char** copy;
+
+	if ((x % n) == 0) 
+	{
+		copy = (char**)malloc(sizeof(char*) * (x / n));
+
+		for (i = 0; i < (x / n); i++) 
+		{
+			copy[i] = (char*)malloc(sizeof(char) * n);
+		}
+
+		for (i = 0; i < (x / n); i++) 
+		{
+			for (j = 0; j < n; j++) 
+			{
+				copy[i][j] = s[(i * n) + j]; 
+			}
+		}
+	}
+
+	else 
+	{
+		copy = (char**)malloc(sizeof(char) * ((x / n) + 1));
+
+		for (i = 0; i < ((x / n) + 1); i++) 
+		{
+			copy[i] = (char*)malloc(sizeof(char) * n);
+		}
+
+		for (i = 0; i < ((x / n) + 1); i++)
+		{
+			for (j = 0; j < n; j++) 
+			{
+				if (((i * n) + j) >= x) 
+				{
+					copy[i][j] = ' ';
+				}
+
+				else
+				{
+					copy[i][j] = s[(i * n) + j];
+				}
+			}
+		}
+	}
+
+	return copy;
 
 }
