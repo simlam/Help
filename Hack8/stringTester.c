@@ -143,7 +143,12 @@ int main(int argc, char** argv) {
 	int num;
 	num = (x / n) + 1;
 	int flag = 0;
-	char expectedResult7[][] = { {"a", "b", "c"}, {"d", "e", "f"}, {"g", " ", " "} };
+	char expectedResult7[3][3] = {
+		{'a', 'b' , 'c'},
+		{'d', 'e', 'f'},
+		{'g', ' ', ' '}
+
+	};
 	new2 = lengthSplit(s, n);
 
 	for (i = 0; i < num; i++)
