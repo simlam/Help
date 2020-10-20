@@ -149,6 +149,7 @@ int main(int argc, char** argv) {
 		{'g', ' ', ' '}
 
 	};
+	printf("TESTING: lengthSplit(%s, %d);\n", s, n);
 	new2 = lengthSplit(s, n);
 
 	for (i = 0; i < num; i++)
@@ -169,8 +170,80 @@ int main(int argc, char** argv) {
 	else
 	{
 		printf("FAILED\n");
-		printf("expected result:[%s]\n", expectedResult7);
-		printf("lengthSplit result:[%s]\n", new2);
+		printf("expected result:[%s]\n", *expectedResult7);
+		printf("lengthSplit result:[%s]\n", *new2);
+		numFailed++;
+	}
+
+	i = 0;
+	j = 0;
+	n = 4;
+	x = strlen(s);
+	num = (x / n) + 1;
+	flag = 0;
+	printf("TESTING: lengthSplit(%s, %d);\n", s, n);
+	char expectedResult8[2][4] = {
+		{'a', 'b', 'c', 'd' },
+		{'e', 'f', 'g', ' ' }
+	};
+	new2 = lengthSplit(s, n);
+
+	for (i = 0; i < num; i++)
+	{
+		for (j = 0; j < num; j++)
+		{
+			if (expectedResult8[i][j] != new2[i][j])
+			{
+				flag = 1;
+			}
+		}
+	}
+	if (flag == 0)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED\n");
+		printf("expected result:[%s]\n", *expectedResult8);
+		printf("lengthSplit result:[%s]\n", *new2);
+		numFailed++;
+	}
+
+	i = 0;
+	j = 0;
+	n = 5;
+	x = strlen(s);
+	num = (x / n) + 1;
+	flag = 0;
+	printf("TESTING: lengthSplit(%s, %d);\n", s, n);
+	char expectedResult9[2][5] = {
+		{'a', 'b' , 'c', 'd' , 'e'},
+		{'f', 'g', ' ', ' ', ' '}
+	};
+	new2 = lengthSplit(s, n);
+
+	for (i = 0; i < num; i++)
+	{
+		for (j = 0; j < num; j++)
+		{
+			if (expectedResult9[i][j] != new2[i][j])
+			{
+				flag = 1;
+			}
+		}
+	}
+	if (flag == 0)
+	{
+		printf("PASSED\n");
+		numPassed++;
+	}
+	else
+	{
+		printf("FAILED\n");
+		printf("expected result:[%s]\n", *expectedResult9);
+		printf("lengthSplit result:[%s]\n", *new2);
 		numFailed++;
 	}
 
