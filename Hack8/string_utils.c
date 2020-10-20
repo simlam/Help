@@ -46,8 +46,8 @@ char* replaceCharCopy(const char* s, char oldChar, char newChar) {
 		}
 		else
 		{
-			copy[j] = s[i];
-			j++;
+		copy[j] = s[i];
+		j++;
 		}
 	}
 
