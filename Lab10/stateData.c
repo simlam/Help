@@ -87,12 +87,13 @@ void toXMLFile(char **states, int *populations, int numStates) {
         printf("Could not write to file");
         return;
     }
-
+    
     fprintf(xml, "<States>\n");
     for (i = 0; i < numStates; i++)
     {
 
         fprintf(xml, "  <State>\n");
+        rtrim(states[i]);
         fprintf(xml, "      <Name>%s</Name>\n", states[i]);
         fprintf(xml, "      <Population>%d</Population>\n", populations[i]);
         fprintf(xml, "  </State>\n");
