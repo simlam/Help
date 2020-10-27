@@ -7,7 +7,7 @@
 char* getFileContents(const char* filePath) {
 
 	int size = 100;
-	char tempBuffer[size];
+	char* tempBuffer[size];
 
 	FILE* read = fopen(filePath, "r");
 	if (read == NULL)
@@ -25,7 +25,7 @@ char** getFileLines(const char* filePath, int* numLines) {
 
 	int n;
 	n = *numLines;
-	char tempBuffer[n];
+	char* tempBuffer[n];
 	int i = 0;
 
 	

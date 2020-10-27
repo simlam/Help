@@ -132,7 +132,7 @@ int main(int argc, char** argv) {
     FILE* translate = fopen(argv[2], "w");
     for (i = 0; i < size; i++)
     {
-        fprintf(translate, "%c", codon[i]);
+        fprintf(translate, "%c ", codon[i]);
     }
     fclose(translate);
     
