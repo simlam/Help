@@ -10,10 +10,10 @@ char* getFileContents(const char* filePath) {
 	char tempBuffer[size];
 
 	FILE* read = fopen(filePath, "r");
-	if (read == NULL)
+	/*if (read == NULL)
 	{
 		return NULL;
-	}
+	}*/
 
 	char* string = fgets(tempBuffer, size, read);
 
@@ -32,14 +32,14 @@ char** getFileLines(const char* filePath, int* numLines) {
 	char** strings = (char**)malloc(sizeof(char*) * n);
 
 	FILE* read = fopen(filePath, "r");
-	if (read == NULL)
+	/*if (read == NULL)
 	{
 		return NULL;
 	}
 	if (numLines == NULL)
 	{
 		return NULL;
-	}
+	}*/
 
 	while (fgets(tempBuffer, size, read) != NULL)
 	{

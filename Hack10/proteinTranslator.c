@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
 
     FILE* read = fopen(argv[1], "r");
     fgets(tempBuffer, size, read);
-    *protein = rnaToProtein(tempBuffer);
+    protein = rnaToProtein(tempBuffer);
     rtrim(protein);
     fclose(read);
 
