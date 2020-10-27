@@ -16,7 +16,7 @@ char* getFileContents(const char* filePath) {
 	}
 
 	char* string = fgets(tempBuffer, size, read);
-
+	fclose(read);
 	return string;
 
 }
