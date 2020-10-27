@@ -6,7 +6,7 @@
 int main(int argc, char** argv) {
 
     int size = 500;
-    int tempBuffer[size];
+    char tempBuffer[size];
 
     if (argc != 3) {
         fprintf(stderr, "Usage: %s in.txt out.txt\n", argv[0]);
@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     fclose(read);
 
     FILE* translate = fopen(argv[2], "w");
-    fprintf(translate, "%s", char);
+    fprintf(translate, "%s", protein);
     fclose(translate);
     
     return 0;
