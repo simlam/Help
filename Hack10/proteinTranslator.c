@@ -23,7 +23,6 @@ int main(int argc, char** argv) {
     protein = rnaToProtein(tempBuffer);
     rtrim(protein);
     fclose(read);
-
     FILE* translate = fopen(argv[2], "w");
     fprintf(translate, "%s", protein);
     fclose(translate);
