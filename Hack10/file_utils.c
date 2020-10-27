@@ -6,9 +6,7 @@
 
 char* getFileContents(const char* filePath) {
 
-	int size = 100;
-	char tempBuffer[size];
-	char* stringcopy;
+	char* stringcopy[100];
 
 	FILE* read = fopen(filePath, "r");
 	if (read == NULL)
@@ -46,8 +44,7 @@ char** getFileLines(const char* filePath, int* numLines) {
 	while (fgets(tempBuffer, n, read) != NULL)
 	{
 		tempBuffer[strlen(tempBuffer) - 1] = '\0';
-		char* lineToken = strtok(tempBuffer, '\n');
-		strcpy(strings[i], lineToken);
+		strcpy(strings[i], tempBuffer);
 		i++;
 	}
 
