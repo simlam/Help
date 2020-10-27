@@ -1,9 +1,10 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "protein_utils.h"
 
-void rtrim(char* str); 
+
 
 int main(int argc, char** argv) {
 
@@ -17,6 +18,7 @@ int main(int argc, char** argv) {
     }
 
     FILE* read = fopen(argv[1], "r");
+    fgets(tempBuffer, size, read);
     char protein = rnaToProtein(tempBuffer);
     fclose(read);
 
