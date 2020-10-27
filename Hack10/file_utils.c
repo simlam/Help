@@ -46,7 +46,7 @@ char** getFileLines(const char* filePath, int* numLines) {
 	while (fgets(tempBuffer, n, read) != NULL)
 	{
 		tempBuffer[strlen(tempBuffer) - 1] = '\0';
-		char* lineToken = strtok(tempBuffer, "\n");
+		char* lineToken = strtok(tempBuffer, '\n');
 		strcpy(strings[i], lineToken);
 		i++;
 	}
