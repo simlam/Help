@@ -8,9 +8,8 @@
 
 int main(int argc, char** argv) {
 
-    int size = 500;
+    int size = 100;
     char tempBuffer[size];
-    int i;
 
     if (argc != 3) {
         fprintf(stderr, "Usage: %s in.txt out.txt\n", argv[0]);
