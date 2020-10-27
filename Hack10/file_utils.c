@@ -12,7 +12,6 @@ char* getFileContents(const char* filePath) {
 	FILE* read = fopen(filePath, "r");
 	if (read == NULL)
 	{
-		fprintf(stderr, "Unable to open file: %s\n", filePath);
 		return NULL;
 	}
 
@@ -35,7 +34,6 @@ char** getFileLines(const char* filePath, int* numLines) {
 	FILE* read = fopen(filePath, "r");
 	if (read == NULL)
 	{
-		fprintf(stderr, "Unable to open file: %s\n", filePath);
 		return NULL;
 	}
 	if (numLines == NULL)
