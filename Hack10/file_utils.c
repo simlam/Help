@@ -8,6 +8,7 @@ char* getFileContents(const char* filePath) {
 
 	int size = 100;
 	char tempBuffer[size];
+	char* stringcopy;
 
 	FILE* read = fopen(filePath, "r");
 	if (read == NULL)
@@ -16,8 +17,9 @@ char* getFileContents(const char* filePath) {
 	}
 
 	fgets(tempBuffer, size, read);
+	strcpy(stringcopy, tempBuffer);
 	fclose(read);
-	return tempBuffer;
+	return stringcopy;
 
 }
 
