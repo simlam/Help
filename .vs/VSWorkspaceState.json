@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hack10",
+    "\\Hack8",
+    "\\Lab10"
   ],
-  "SelectedNode": "\\Hack10",
+  "SelectedNode": "\\Hack8\\string_utils.c",
   "PreviewInSolutionExplorer": false
 }
